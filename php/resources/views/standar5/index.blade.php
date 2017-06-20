@@ -23,6 +23,7 @@
                                                   <div class="row">
                                                     <div class="col-md-8">
                                                       <select name="standar5_1_1_1_a" id="" class="form-control border-input" required="">
+                                                        <option>--Pilih--</option>
                                                         <option value="0">Kurikulum tidak memuat kompetensi lulusan secara lengkap</option>
                                                         <option value="1">Kurikulum memuat kompetensi lulusan secara lengkap (utama, pendukung, lainnya), namun rumusannya kurang jelas</option>
                                                         <option value="2">Kurikulum memuat kompetensi lulusan secara lengkap (utama, pendukung, lainnya) yang terumuskan secara cukup jelas</option>
@@ -49,6 +50,7 @@
                                                   <div class="row">
                                                     <div class="col-md-8">
                                                       <select name="standar5_1_2_b" id="" class="form-control border-input" required="">
+                                                      <option>--Pilih--</option>
                                                         <option value="0">Tidak sesuai dengan visi - misi serta tidak jelas orientasinya atau Tidak memuat standar kompetensi</option>
                                                         <option value="1">Tidak sesuai dengan visi - misi</option>
                                                         <option value="2">Sesuai dengan visi - misi, tetapi masih beroreintasi ke masa lalu</option>
@@ -102,6 +104,7 @@
                                                   <div class="row">
                                                     <div class="col-md-8">
                                                         <select name="standar5_1_3_a" id="" class="form-control border-input" required="">
+                                                            <option>--Pilih--</option>
                                                             <option value="1">Tidak ada monitoring</option>
                                                             <option value="2">Ada monitoring tetapi tidak ada evaluasi</option>
                                                             <option value="3">Ada monitoring, evaluasi tidak kontinu</option>
@@ -142,6 +145,7 @@
                                                    <div class="row">
                                                      <div class="col-md-8">
                                                          <select name="standar5_3_2" id="" class="form-control border-input" required="">
+                                                            <option>--Pilih--</option>
                                                              <option value="0">Semua soal ujian tidak bermutu atau tidak sesuai dengan GBPP/SAP</option>
                                                              <option value="1">Hanya satu contoh soal ujian yang mutunya baik, dan sesuai denganGBPP/SAP</option>
                                                              <option value="2">Dua s.d. tiga contoh soal ujian yang mutunya baik, dansesuai dengan GBPP/SAP</option>
@@ -212,6 +216,7 @@
                                                     <div class="row">
                                                       <div class="col-md-8">
                                                           <select name="standar5_4_2" id="" class="form-control border-input" required="">
+                                                            <option>--Pilih--</option>
                                                             <option value="0">Sistem bantuan dan bimbingan akademik tidak jalan, atau tidak ada bimbingan</option>
                                                             <option value="1">Sistem bantuan dan bimbingan akademik tidak efektif</option>
                                                             <option value="2">Sistem bantuan dan bimbingan akademik cukup efektif</option>
@@ -340,6 +345,7 @@
                                                   <div class="row">
                                                       <div class="col-md-8">
                                                         <select name="standar5_7_3" id="" class="form-control border-input" required="">
+                                                          <option>--Pilih--</option>
                                                           <option value="1">Kegiatan ilmiah yang terjadwal dilaksanakan lebih dari enam bulan sekali</option>
                                                           <option value="2">Kegiatan ilmiah yang terjadwal dilaksanakan empat s.d. enam bulan sekali</option>
                                                           <option value="3">Kegiatan ilmiah yang terjadwal dilaksanakan dua s.d tiga bulan sekali</option>
@@ -374,6 +380,7 @@
                                                   <div class="row">
                                                   <div class="col-md-8">
                                                     <select name="standar5_7_5" id="" class="form-control border-input" required="">
+                                                      <option>--Pilih--</option>
                                                       <option value="1">Kegiatan yang dilakukan tidak menunjang pengembangan perilaku kecendekiawanan</option>
                                                       <option value="2">Kegiatan yang dilakukan cukup menunjang pengembangan perilaku kecendekiawanan</option>
                                                       <option value="3">Kegiatan yang dilakukan menunjang pengembangan perilaku kecendekiawan</option>

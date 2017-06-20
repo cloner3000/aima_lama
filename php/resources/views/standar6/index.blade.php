@@ -133,6 +133,7 @@
                             <div class="row">
                               <div class="col-md-5">
                                 <select name="nilai6_4_1_c" id="" class="form-control border-input" required="">
+                                  <option>--Pilih--</option>
                                   <option value="4">≥3 Judul jurnal, nomornya lengkap</option>
                                   <option value="3">2 Judul jurnal, nomornya lengkap</option>
                                   <option value="2">1 Judul jurnal, nomornya lengkap</option>
@@ -157,6 +158,7 @@
                           <div class="row">
                             <div class="col-md-5">
                               <select name="nilai6_4_1_d" id="" class="form-control border-input" required="">
+                                <option>--Pilih--</option>
                                 <option value="4">≥2 Judul jurnal, nomornya lengkap</option>
                                 <option value="3">2 Judul jurnal, nomornya lengkap</option>
                                 <option value="2">Tidak ada jurnal yang nomornya lengkap</option>

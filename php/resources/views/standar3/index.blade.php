@@ -95,6 +95,7 @@
                                 <div class="row">
                                   <div class="form-group col-md-3">
                                     <select name="n_3_1_2" id="" class="form-control border-input">
+                                        <option>--Pilih--</option>
                                         <option value="0">Jumlah mahasiswa yang diterima mengakibatkan beban dosen sangat berat, melebihi 19 sks.</option>
                                         <option value="1">Jumlah mahasiswa yang diterima mengakibatkan beban dosen relatif berat, yaitu lebih dari 17 s.d. 19 sks.</option>
                                         <option value="2">Jumlah mahasiswa yang diterima masih memungkinkan dosen mengajar seluruh mahasiswa dengan total beban lebih dari 15  s.d. 17 sks.</option>
@@ -117,6 +118,7 @@
                                 <div class="row">
                                   <div class="form-group col-md-3">
                                     <select name="n_3_1_3" id="" class="form-control border-input">
+                                      <option>--Pilih--</option>
                                       <option value="1">Tidak ada</option>
                                       <option value="2">Tingkat Lokal</option>
                                       <option value="3">Tingkat Wilayah</option>
@@ -137,11 +139,11 @@
                                 </strong>
                                 <div class="row">
                                   <div class="form-group col-md-3">
-                                    <label for="f">f</label>
+                                    <label for="f">Mahasiswa lulus tepat waktu</label>
                                     <input type="number" step=0.01 name="f" class="form-control border-input" id="f" required="">
                                   </div>
                                   <div class="form-group col-md-3">
-                                    <label for="d">d</label>
+                                    <label for="d">Mahasiswa lulus</label>
                                     <input type="number" step=0.01 name="d" class="form-control border-input" id="d" required="">
                                   </div>
                                 </div>
@@ -158,15 +160,15 @@
                                 </strong>
                                 <div class="row">
                                   <div class="form-group col-md-3">
-                                    <label for="a">a</label>
+                                    <label for="a">Jumlah mahasiswa</label>
                                     <input type="number" step=0.01 name="a" class="form-control border-input" id="a" required="">
                                   </div>
                                   <div class="form-group col-md-3">
-                                    <label for="b">b</label>
+                                    <label for="b">Banyaknya <em>Drop Out</em></label>
                                     <input type="number" step=0.01 name="b" class="form-control border-input" id="b" required="">
                                   </div>
                                   <div class="form-group col-md-3">
-                                    <label for="c">c</label>
+                                    <label for="c">Jumlah mahasiswa mengundurkan diri</label>
                                     <input type="number" step=0.01 name="c" class="form-control border-input" id="c" required="">
                                   </div>
                                 </div>
@@ -192,6 +194,7 @@
                                 <div class="row">
                                   <div class="form-group col-md-3">
                                     <select name="n_3_2_1" id="" class="form-control border-input">
+                                      <option>--Pilih--</option>
                                       <option value="0">Kurang dari 2 unit pelayanan</option>
                                       <option value="1">2 jenis unit pelayanan</option>
                                       <option value="2">Tersedia pelayanan nomor 1 dan 2</option>
@@ -214,6 +217,7 @@
                                 <div class="row">
                                   <div class="form-group col-md-3">
                                     <select name="n_3_2_2" id="" class="form-control border-input">
+                                      <option>--Pilih--</option>
                                       <option value="0">0</option>
                                       <option value="1">1</option>
                                       <option value="2">2</option>
@@ -236,6 +240,7 @@
                                 <div class="row">
                                 <div class="col-md-3">
                                     <select name="n_3_3_1_b" id="" class="form-control border-input">
+                                        <option>--Pilih--</option>
                                         <option value="0">Tidak ada tindak lanjut</option>
                                         <option value="1">Perbaikan 1 item</option>
                                         <option value="2">Perbaikan 2 item</option>
@@ -257,19 +262,19 @@
                                 </strong>
                                 <div class="row">
                                   <div class="form-group col-md-3">
-                                    <label for="a">a</label>
+                                    <label for="a">Sangat Baik</label>
                                     <input type="number" step=0.01 name="a" class="form-control border-input" id="a" required="">
                                   </div>
                                   <div class="form-group col-md-3">
-                                    <label for="b">b</label>
+                                    <label for="b">Baik</label>
                                     <input type="number" step=0.01 name="b" class="form-control border-input" id="b" required="">
                                   </div>
                                   <div class="form-group col-md-3">
-                                    <label for="c">c</label>
+                                    <label for="c">Cukup</label>
                                     <input type="number" step=0.01 name="c" class="form-control border-input" id="c" required="">
                                   </div>
                                   <div class="form-group col-md-3">
-                                    <label for="d">d</label>
+                                    <label for="d">Kurang</label>
                                     <input type="number" step=0.01 name="d" class="form-control border-input" id="d" required="">
                                   </div>
 
@@ -325,6 +330,7 @@
                                 <div class="row">
                                 <div class="col-md-5">
                                     <select name="n_3_4_1" id="" class="form-control border-input">
+                                        <option>--Pilih--</option>
                                         <option value="0">Tidak ada partisipasi alumni.</option>
                                         <option value="1">Hanya 1 bentuk partisipasi saja yang dilakukan oleh alumni</option>
                                         <option value="2">Hanya 2 bentuk partisipasi yang dilakukan oleh alumni.</option>
@@ -347,6 +353,7 @@
                                 <div class="row">
                                 <div class="col-md-5">
                                     <select name="n_3_4_2" id="" class="form-control border-input">
+                                      <option>--Pilih--</option>
                                       <option value="0">Tidak ada partisipasi alumni.</option>
                                       <option value="1">Hanya 1 bentuk partisipasi saja yang dilakukan oleh alumni</option>
                                       <option value="2">Hanya 2 bentuk partisipasi yang dilakukan oleh alumni.</option>

@@ -214,6 +214,7 @@
                               <div class="form-group col-md-12 form-inline">
                                 <div class="col-md-12">
                                   <select class="form-control border-input" name="n4_3_4">
+                                  <option>--Pilih--</option>
                                     <option value="4">Semua mata kuliah diajar oleh dosen yang sesuai keahliannya</option>
                                     <option value="3">1 - 3 mata kuliah diajar oleh dosen tidak sesuai dengan keahliannya</option>
                                     <option value="2">4 - 7 mata kuliah diajar oleh doesn yang tidak sesuai keahliannya</option>
@@ -307,6 +308,7 @@
                               <div class="form-group col-md-12 form-inline">
                                 <div class="col-md-12">
                                   <select class="form-control border-input" name="n4_4_2_a">
+                                  <option>--Pilih--</option>
                                     <option value="4">Semua dosen tidak tetap mengajar mata kuliah yang sesuai keahliannya</option>
                                     <option value="3">1 - 2 mata kuliah diajar oleh dosen tidak tetap yang tidak sesuai keahliannya</option>
                                     <option value="2">3 - 4 mata kuliah diajar oelh dosen tidak tetap yang tidak sesuai keahliannya</option>
@@ -469,6 +471,7 @@
                             <div class="row">
                               <div class="col-md-12">
                                 <select class="form-control border-input" name="n4_5_4">
+                                  <option>--Pilih--</option>
                                   <option value="4">Mendapatkan penghargaan hibah, pendanaan program dan kegiatan akademik dari institusi internasional (disertai bukti)</option>
                                   <option value="3">Mendapatkan penghargaan hibah, pendanaan program dan kegiatan akademik dari institusi nasional (disertai bukti)</option>
                                   <option value="2">Mendapatkan penghargaan hibah, pendanaan program dan kegiatan akademik dari institusi regional/lokal (disertai bukti)</option>
