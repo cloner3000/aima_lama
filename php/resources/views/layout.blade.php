@@ -36,7 +36,100 @@
 <body>
 
 <div class="wrapper">
+<div class="sidebar" data-background-color="white" data-active-color="danger">
 
+    <!--
+        Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+        Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+    -->
+
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="http://spm.um.ac.id/" class="simple-text">
+                    SPM UM
+                </a>
+            </div>
+
+            <ul class="nav">
+            @if (Request::is('standar1')||Request::is('standar1/*'))
+                <li class="active">
+            @else
+                <li>
+            @endif
+                    <a href="{{ url('/standar1') }}">
+                        <i class="ti-panel"></i>
+                        <p>Standart 1</p>
+                    </a>
+                </li>
+            @if (Request::is('standar2')||Request::is('standar2/*'))
+                <li class="active">
+            @else
+                <li>
+            @endif
+                    <a href="{{ url('/standar2') }}">
+                        <i class="ti-user"></i>
+                        <p>Standart 2</p>
+                    </a>
+                </li>
+            @if (Request::is('standar3')||Request::is('standar3/*'))
+                <li class="active">
+            @else
+                <li>
+            @endif
+                    <a href="{{ url('/standar3') }}">
+                        <i class="ti-view-list-alt"></i>
+                        <p>Standart 3</p>
+                    </a>
+                </li>
+            @if (Request::is('standar4')||Request::is('standar4/*'))
+                <li class="active">
+            @else
+                <li>
+            @endif
+                    <a href="{{ url('/standar4') }}">
+                        <i class="ti-text"></i>
+                        <p>Standart 4</p>
+                    </a>
+                </li>
+            @if (Request::is('standar5')||Request::is('standar5/*'))
+                <li class="active">
+            @else
+                <li>
+            @endif
+                    <a href="{{ url('/standar5') }}">
+                        <i class="ti-pencil-alt2"></i>
+                        <p>Standart 5</p>
+                    </a>
+                </li>
+            @if (Request::is('standar6')||Request::is('standar6/*'))
+                <li class="active">
+            @else
+                <li>
+            @endif
+                    <a href="{{ url('/standar6') }}">
+                        <i class="ti-map"></i>
+                        <p>Standart 6</p>
+                    </a>
+                </li>
+            @if (Request::is('standar7')||Request::is('standar7/*'))
+                <li class="active">
+            @else
+                <li>
+            @endif
+                    <a href="{{ url('/standar7') }}">
+                        <i class="ti-bell"></i>
+                        <p>Standart 7</p>
+                    </a>
+                </li>
+                <li class="active-pro">
+                    <a href="{{ url('/rekap') }}">
+                        <i class="ti-export"></i>
+                        <p>Rekapitulasi</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <div class="main-panel">
         <nav class="navbar navbar-default">
@@ -87,166 +180,7 @@
 
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-2 col-sm-3 col-xs-3">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                            <i class="ti-direction-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Standar 2</p>
-                                           {{--  100% --}}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <a href="/standar2">Isi Sekarang</a>
-                                         <span class="pull-right"><a href="#"><i class="fa fa-info-circle"></i></a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-3">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-success text-center">
-                                            <i class="ti-ruler-pencil"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Standar 3</p>
-                                           {{--  100% --}}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <a href="/standar3">Isi Sekarang</a>
-                                        <span class="pull-right"><a href="#"><i class="fa fa-info-circle"></i></a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-3">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-danger text-center">
-                                            <i class="fa fa-graduation-cap"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Standar 4</p>
-                                           {{--  100% --}}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                       <a href="/standar4">Isi Sekarang</a>
-                                         <span class="pull-right"><a href="#"><i class="fa fa-info-circle"></i></a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-3">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                            <i class="fa fa-id-badge"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Standar 5</p>
-                                           {{--  100% --}}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <a href="standar5">Isi Sekarang</a>
-                                         <span class="pull-right"><a href="#"><i class="fa fa-info-circle"></i></a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-3">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                            <i class="ti-book"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Standar 6</p>
-                                          {{--  100% --}}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <a href="standar6">Isi Sekarang</a>
-                                         <span class="pull-right"><a href="#"><i class="fa fa-info-circle"></i></a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-sm-3 col-xs-3">
-                        <div class="card">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="col-xs-5">
-                                        <div class="icon-big icon-warning text-center">
-                                            <i class="fa fa-handshake-o
-"></i>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-7">
-                                        <div class="numbers">
-                                            <p>Standar 7</p>
-                                           {{--  100% --}}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="footer">
-                                    <hr />
-                                    <div class="stats">
-                                        <a href="standar7">Isi Sekarang</a>
-                                         <span class="pull-right"><a href="#"><i class="fa fa-info-circle"></i></a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                {{--  --}}
                 <div class="row">
                     @yield("content")
                 </div>

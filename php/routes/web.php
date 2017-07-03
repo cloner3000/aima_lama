@@ -15,6 +15,9 @@ Route::get('/servicelogout','SecurityController@logout');
 
 
 Route::get('/', "PageController@index");
+Route::get("/standar1", "Standar1Controller@index");
+Route::post("/standar1/save", "Standar1Controller@save");
+Route::post("/standar1/update", "Standar1Controller@update");
 Route::get('/standar2', "Standar2Controller@index");
 Route::post('/standar2/save', "Standar2Controller@save");
 Route::post('/standar2/update', "Standar2Controller@update");

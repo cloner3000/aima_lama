@@ -3,8 +3,8 @@
 <div class="col-md-12">
     <div class="card">
         <div class="header">
-            <h4 class="title">Tata Pamong, Kepemimpinan, Sistem Pengelolaan, dan Penjaminan Mutu</h4>
-            <p class="category">Standar 2</p>
+            <h4 class="title">Visi, Misi, Tujuan, dan Sasaran, serta Strategi Pencapaian</h4>
+            <p class="category">Standar 1</p>
         </div>
         <div class="content">
             <form @if(0==sizeof($data)) action="/standar2/save" @else action="/standar2/update" @endif method="post" class="kuesioner">
@@ -16,55 +16,54 @@
                 <ul class="list-unstyled">
                     <li class="row">
                         <div class="col-md-12 komponen">
-                            <span class="nomor pull-left">2.1</span>
+                            <span class="nomor pull-left">1.1.a</span>
                             <div class="deskriptor pull-left">
-                                <strong>Tata Pamong adalah sistem yang bisa menjamin terlaksananya lima pilar tata pamong yaitu: <br/>(1) kredibel, (2) transparan, (3) akuntabel, (4) bertanggung jawab, (5) adil.</strong>
+                                <strong>Kejelasan dan kerealistikan visi, misi, tujuan, dan sasaran, serta strategi pencapaian sasaran Fakultas/Sekolah Tinggi.</strong>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <select name="skor2_1" id="" class="form-control border-input">
                             <option>--Pilih--</option>  
-                            <option value="4">Tata pamong memenuhi 5 aspek tersebut</option>
-                            <option value="3">Tata pamong memenuhi 4 dari 5 aspek tersebut</option>
-                            <option value="2">Tata pamong memenuhi 3 dari 5 aspek tersebut</option>
-                            <option value="1">Tata pamong memenuhi 1 s.d 2 dari 5 aspek tersebut</option>
+                            <option value="4">Memiliki visi, misi, tujuan, dan sasaran yang sangat jelas dan sangat realistik</option>
+                            <option value="3">Memiliki visi, misi, tujuan, dan sasaran jelas dan  realistik.</option>
+                            <option value="2">Memiliki visi, misi, tujuan, dan sasaran yang cukup jelas namun kurang realistik.</option>
+                            <option value="1">Memiliki visi, misi, tujuan, dan sasaran yang kurang jelas dan tidak realistik</option>
 
                             </select>
                         </div>
                     </li>
                     <li class="row">
                         <div class="col-md-12 komponen">
-                            <span class="nomor pull-left">2.2</span>
+                            <span class="nomor pull-left">1.1.b</span>
                             <div class="deskriptor pull-left">
-                                <strong>Kepemimpinan Program Studi memiliki karakteristik:<br/> (1) kepemimpinan operasional, (2) kepemimpinan organisasi, (3) kepemimpinan publik.</strong>
+                                <strong>Strategi pencapaian sasaran dengan rentang waktu yang jelas dan didukung oleh dokumen.</strong>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <select name="skor2_2" id="" class="form-control border-input">
                                 <option>--Pilih--</option>
-                                <option value="4">Kepemimpinan program studi memiliki karakteristik yang kuat pada 3 aspek tersebut</option>
-                                <option value="3">Memiliki karakter kepemimpinan yang kuat dalam dua dari karakteristik tersebut</option>
-                                <option value="2">Memiliki karakter kepemimpinan yang kuat dalam salah satu dari karakteristik tersebut</option>
-                                <option value="1">Kepemimpinan program studi lemah dalam karakteristik tersebut</option>
+                              <option value="4">dengan tahapan waktu yang jelas dan sangat realistik | didukung dokumen yg sangat lengkap</option>
+                              <option value="3">dengan tahapan waktu yang jelas, dan realistik  | didukung dokumen yang  lengkap.</option>
+                              <option value="2">dengan tahapan waktu yang jelas, dan cukup realistik | didukung dokumen yang cukup lengkap.</option>
+                              <option value="1">tanpa adanya tahapan waktu yang jelas | didukung dokumen yang kurang lengkap</option>
                             </select>
                         </div>
                     </li>
                     <li class="row">
                         <div class="col-md-12 komponen">
-                            <span class="nomor pull-left">2.6</span>
+                            <span class="nomor pull-left">1.2</span>
                             <div class="deskriptor pull-left">
-                                <strong>Upaya-upaya yang telah dilakukan penyelenggara program studi untuk menjamin keberlanjutan (sustainability) program studi ini antara lain mencakup: <br/>a. Upaya untuk peningkatan animo calon mahasiswa, <br/>b. Upaya peningkatan mutu manajemen, <br/>c. Upaya untuk peningkatan mutu lulusan,<br/> d. Upaya untuk pelaksanaan dan hasil kerjasama kemitraan, <br/>e. Upaya dan prestasi dalam memperoleh dana hibah kompetitif.</strong>
+                                <strong>Pemahaman  visi, misi, tujuan, dan sasaran Fakultas/ Sekolah Tinggi oleh seluruh pemangku kepentingan internal (internal stakeholders): sivitas akademika (dosen dan mahasiswa) dan tenaga kependidikan.</strong>
                             </div>
 
                         </div>
                         <div class="col-md-12">
                             <select name="skor2_6" id="" class="form-control border-input">
                                 <option>--Pilih--</option>
-                                <option value="4">Ada bukti semua usaha dilakukan berikut hasilnya.</option>
-                                <option value="3">Ada bukti sebagian usaha ( > 3) dilakukan.</option>
-                                <option value="2">Ada bukti hanya sebagian kecil usaha (2-3) yang dilakukan.</option>
-                                <option value="1">Ada bukti hanya 1 usaha yang dilakukan.</option>
-                                <option value="0">Tidak ada usaha.</option>
+                                <option value="4">Dipahami dengan baik oleh seluruh sivitas akademika  dan tenaga kependidikan. </option>
+                                <option value="3">Dipahami dengan baik oleh sebagian  sivitas akademika dan tenaga kependidikan.</option>
+                                <option value="2">Kurang dipahami oleh  sivitas akademika  dan tenaga kependidikan.</option>
+                                <option value="1">Tidak dipahami oleh seluruh sivitas akademika dan tenaga kependidikan.</option>
                             </select>
                         </div>
                     </li>
