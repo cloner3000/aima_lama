@@ -23,6 +23,7 @@
                         </div>
                         <div class="col-md-1">
                             <select name="skor2_1" id="" class="form-control border-input">
+                            <option>--Pilih--</option>  
                             @for($i=1;$i<=4; $i++)
                                 <option value="{{ $i }}" @if(isset($data["2.1"]) && $data["2.1"] == $i)) selected="true"  @endif>{{ $i }}</option>
                             @endfor
@@ -39,6 +40,7 @@
                         </div>
                         <div class="col-md-1">
                             <select name="skor2_2" id="" class="form-control border-input">
+                                <option>--Pilih--</option>
                                @for($i=1;$i<=4; $i++)
                                 <option value="{{ $i }}" @if(isset($data["2.2"]) && $data["2.2"] == $i)) selected="true"  @endif>{{ $i }}</option>
                             @endfor
@@ -55,6 +57,7 @@
                         </div>
                         <div class="col-md-1">
                             <select name="skor2_6" id="" class="form-control border-input">
+                                <option>--Pilih--</option>
                                 @for($i=0;$i<=4; $i++)
                                 <option value="{{ $i }}" @if(isset($data["2.6"]) && $data["2.6"] == $i)) selected="true"  @endif>{{ $i }}</option>
                             @endfor
