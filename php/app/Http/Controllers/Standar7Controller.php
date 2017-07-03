@@ -10,8 +10,13 @@ class Standar7Controller extends Controller
     public function index(){
       $standar="Standar 7";
       $data = Standar7::select('kode', 'data', 'skor', 'kategori')->where('id_prodi', '=', '1')->orderBy('kode', 'asc')->get();
-      //dd($data);
-      return view('standar7.index', compact('standar', 'json', 'data'));
+      if(!$data->count()){
+        $dataCheck = true;
+      }else{
+        $dataCheck = false;
+      }
+      // dd($dataCheck);
+      return view('standar7.index', compact('standar', 'data', 'dataCheck'));
     }
 
     public function save(Request $request){

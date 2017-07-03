@@ -22,7 +22,7 @@
                             <div class="row">
                               <div class="form-group col-md-3">
                                 <label for="nilai6_2_1_dana">Jumlah Dana Operasional Permahasiswa Pertahun</label>
-                                <input type="number" name="nilai6_2_1_dana" class="form-control border-input" id="nilai6_2_1" required="">
+                                <input type="number" name="nilai6_2_1_dana" class="form-control border-input" id="nilai6_2_1" value="<?php if(!$dataCheck) echo json_decode($data[0]->data)[0] ?>" required="">
                               </div>
                           </div>
                         </div>
@@ -38,7 +38,7 @@
                         <div class="row">
                             <div class="form-group col-md-4">
                               <label for="nilai6_2_2dana">Rata-rata dana penelitian per dosen tetap per tahun</label>
-                              <input type="number" name="nilai6_2_2dana" class="form-control border-input" id="nilai6_2_2" required="">
+                              <input type="number" name="nilai6_2_2dana" class="form-control border-input" id="nilai6_2_2" value="<?php if(!$dataCheck) echo json_decode($data[1]->data)[0] ?>" required="">
                             </div>
                           </div>
                     </li>
@@ -52,7 +52,7 @@
                               </div>
                             <div class="row">
                               <div class="form-group col-md-3">
-                                <input type="number" name="nilai6_2_3satu" class="form-control border-input" id="nilai6_2_3" required="">
+                                <input type="number" name="nilai6_2_3satu" class="form-control border-input" id="nilai6_2_3" value="<?php if(!$dataCheck) echo json_decode($data[2]->data)[0] ?>" required="">
                               </div>
                             </div>
                           </div>
@@ -68,20 +68,20 @@
                           <div class="row">
                             <div class="form-group col-md-3">
                               <label for="a">Luas total (m2) ruang bersama untuk dosen tetap</label>
-                              <input type="number" name="a" class="form-control border-input" id="nilai6_3_1" required="">
+                              <input type="number" name="a" class="form-control border-input" id="nilai6_3_1" value="<?php if(!$dataCheck) echo json_decode($data[3]->data)[0] ?>" required="">
                             </div>
 
                             <div class="form-group col-md-3">
                               <label for="b">Luas total (m2) ruang untuk 3-4 orang dosen tetap</label>
-                              <input type="number" name="b" class="form-control border-input" id="nilai6_3_1" required="">
+                              <input type="number" name="b" class="form-control border-input" id="nilai6_3_1" value="<?php if(!$dataCheck) echo json_decode($data[3]->data)[1] ?>" required="">
                             </div>
                             <div class="form-group col-md-3">
                               <label for="c">Luas total (m2) ruang untuk 2 orang dosen tetap</label>
-                              <input type="number" name="c" class="form-control border-input" id="nilai6_3_1" required="">
+                              <input type="number" name="c" class="form-control border-input" id="nilai6_3_1" value="<?php if(!$dataCheck) echo json_decode($data[3]->data)[2] ?>" required="">
                             </div>
                             <div class="form-group col-md-3">
                               <label for="d">Luas total (m2) ruang untuk 1 orang dosen tetap</label>
-                              <input type="number" name="d" class="form-control border-input" id="nilai6_3_1" required="">
+                              <input type="number" name="d" class="form-control border-input" id="nilai6_3_1" value="<?php if(!$dataCheck) echo json_decode($data[3]->data)[3] ?>" required="">
                             </div>
                           </div>
                         </div>
@@ -97,7 +97,7 @@
                               <div class="row">
                                 <div class="form-group col-md-3">
                                   <label for="nilai6_4_1_a">Jumlah bahan pustaka teks</label>
-                                  <input type="number" name="nilai6_4_1_a" class="form-control border-input" id="nilai6_4_1_a" required="">
+                                  <input type="number" name="nilai6_4_1_a" class="form-control border-input" id="nilai6_4_1_a" value="<?php if(!$dataCheck) echo json_decode($data[4]->data)[0] ?>" required="">
                                 </div>
                               </div>
                             </div>
@@ -114,7 +114,7 @@
                             <div class="row">
                               <div class="form-group col-md-3">
                                 <label for="nilai6_4_1_b">Jumlah bahan pustaka berupa disertasi/tesis/skripsi/tugas akhir</label>
-                                <input type="number" name="nilai6_4_1_b" class="form-control border-input" id="nilai6_4_1_b" required="">
+                                <input type="number" name="nilai6_4_1_b" class="form-control border-input" id="nilai6_4_1_b" value="<?php if(!$dataCheck) echo json_decode($data[5]->data)[0] ?>" required="">
                               </div>
                             </div>
                           </div>
@@ -134,11 +134,11 @@
                               <div class="col-md-5">
                                 <select name="nilai6_4_1_c" id="" class="form-control border-input" required="">
                                   <option>--Pilih--</option>
-                                  <option value="4">≥3 Judul jurnal, nomornya lengkap</option>
-                                  <option value="3">2 Judul jurnal, nomornya lengkap</option>
-                                  <option value="2">1 Judul jurnal, nomornya lengkap</option>
-                                  <option value="1">Tidak ada jurnal yang nomornya lengkap </option>
-                                  <option value="0">Tidak memiliki jurnal terakreditasi</option>
+                                  <option value="4" <?php if(!$dataCheck){ if (json_decode($data[6]->data)[0] == 4){ echo "selected"; }}?>>≥3 Judul jurnal, nomornya lengkap</option>
+                                  <option value="3" <?php if(!$dataCheck){ if (json_decode($data[6]->data)[0] == 3){ echo "selected"; }}?>>2 Judul jurnal, nomornya lengkap</option>
+                                  <option value="2" <?php if(!$dataCheck){ if (json_decode($data[6]->data)[0] == 2){ echo "selected"; }}?>>1 Judul jurnal, nomornya lengkap</option>
+                                  <option value="1" <?php if(!$dataCheck){ if (json_decode($data[6]->data)[0] == 1){ echo "selected"; }}?>>Tidak ada jurnal yang nomornya lengkap </option>
+                                  <option value="0" <?php if(!$dataCheck){ if (json_decode($data[6]->data)[0] == 0){ echo "selected"; }}?>>Tidak memiliki jurnal terakreditasi</option>
                                 </select>
                               </div>
                             </div>
@@ -159,9 +159,9 @@
                             <div class="col-md-5">
                               <select name="nilai6_4_1_d" id="" class="form-control border-input" required="">
                                 <option>--Pilih--</option>
-                                <option value="4">≥2 Judul jurnal, nomornya lengkap</option>
-                                <option value="3">2 Judul jurnal, nomornya lengkap</option>
-                                <option value="2">Tidak ada jurnal yang nomornya lengkap</option>
+                                <option value="4" <?php if(!$dataCheck){ if (json_decode($data[7]->data)[0] == 4){ echo "selected"; }}?>>≥2 Judul jurnal, nomornya lengkap</option>
+                                <option value="3" <?php if(!$dataCheck){ if (json_decode($data[7]->data)[0] == 3){ echo "selected"; }}?>>2 Judul jurnal, nomornya lengkap</option>
+                                <option value="2" <?php if(!$dataCheck){ if (json_decode($data[7]->data)[0] == 2){ echo "selected"; }}?>>Tidak ada jurnal yang nomornya lengkap</option>
                               </select>
                             </div>
                           </div>
@@ -179,7 +179,7 @@
                                 <div class="row">
                                   <div class="form-group col-md-3">
                                     <label for="nilai6_4_1_esatu">Jumlah Prosiding dalam Tiga Tahun terakhir</label>
-                                    <input type="number" name="nilai6_4_1_esatu" class="form-control border-input" id="nilai6_4_1_e" required="">
+                                    <input type="number" name="nilai6_4_1_esatu" class="form-control border-input" id="nilai6_4_1_e" value="<?php if(!$dataCheck) echo json_decode($data[8]->data)[0] ?>" required="">
                                   </div>
                                 </div>
                               </div>
