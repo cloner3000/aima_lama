@@ -62,7 +62,6 @@
                         </div>
                     </li>
                     <li class="row">
-
                         <div class="col-md-12 komponen">
                             <div class="pull-left nomor">7.1.3</div>
                             <div class="deskriptor pull-left">

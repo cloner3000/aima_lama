@@ -15,7 +15,6 @@ class Standar7Controller extends Controller
       }else{
         $dataCheck = false;
       }
-      // dd($dataCheck);
       return view('standar7.index', compact('standar', 'data', 'dataCheck'));
     }
 

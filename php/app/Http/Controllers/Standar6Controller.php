@@ -16,7 +16,6 @@ class Standar6Controller extends Controller
         }else{
           $dataCheck = false;
         }
-        // dd($data);
         return view('standar6.index', compact('standar', 'data', 'dataCheck'));
     }
      public function save(Request $request)

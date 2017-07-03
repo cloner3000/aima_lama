@@ -27,7 +27,6 @@
                           </div>
                         </div>
                     </li>
-
                     <li class="row">
                       <div class="col-md-12 komponen">
                           <div class="pull-left nomor">6.2.2</div>
