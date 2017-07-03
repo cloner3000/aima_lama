@@ -28,3 +28,4 @@ Route::get('/standar7', "Standar7Controller@index");
 Route::post('/standar7/save', 'Standar7Controller@save');
 Route::get('/standar6', "Standar6Controller@index");
 Route::post('/standar6/save', "Standar6Controller@save");
+Route::get('/rekap', "RekapController@index");

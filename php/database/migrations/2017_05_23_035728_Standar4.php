@@ -14,12 +14,14 @@ class Standar4 extends Migration
     public function up()
     {
         Schema::create('standar4s', function (Blueprint $table) {
-          $table->increments('id');
-          $table->string('kode', 15);
-          $table->integer('nilai');
-          $table->integer('id_jurusan');
-          $table->timestamps();
-          $table->softDeletes();
+            $table->increments('id');
+            $table->string('kode', 15);
+            $table->json('data')->nullable();
+            $table->float('skor', 8,2)->nullable();
+            $table->integer('kategori');
+            $table->integer('id_prodi');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

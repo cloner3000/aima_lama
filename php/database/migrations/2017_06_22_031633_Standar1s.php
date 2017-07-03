@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Standar6 extends Migration
+class Standar1s extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class Standar6 extends Migration
      */
     public function up()
     {
-        Schema::create('standar6s', function (Blueprint $table) {
+        //
+        Schema::create('standar1s', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kode', 15);
             $table->json('data')->nullable();
@@ -32,6 +33,6 @@ class Standar6 extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('standar6s');
+         Schema::dropIfExists('standar1s');
     }
 }

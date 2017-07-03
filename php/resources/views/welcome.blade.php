@@ -81,7 +81,7 @@
                 <div class="title m-b-md">
                     Audit Internal Mutu Akademik
                 </div>
-                
+
                 <div class="links">
                     <a href="/standar2">Standar 2</a>
                     <a href="/standar3">Standar 3</a>
@@ -89,6 +89,7 @@
                     <a href="/standar5">Standar 5</a>
                     <a href="/standar6">Standar 6</a>
                     <a href="/standar7">Standar 7</a>
+                    <a href="/rekap">Rekap</a>
                 </div>
             </div>
         </div>

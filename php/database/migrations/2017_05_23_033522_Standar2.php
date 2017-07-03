@@ -16,8 +16,10 @@ class Standar2 extends Migration
         Schema::create('standar2s', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kode', 15);
-            $table->integer('nilai');
-            $table->integer('id_jurusan');
+            $table->json('data')->nullable();
+            $table->float('skor', 8,2)->nullable();
+            $table->integer('kategori');
+            $table->integer('id_prodi');
             $table->timestamps();
             $table->softDeletes();
         });

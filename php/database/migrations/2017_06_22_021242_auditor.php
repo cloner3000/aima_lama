@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Standar6 extends Migration
+class Auditor extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class Standar6 extends Migration
      */
     public function up()
     {
-        Schema::create('standar6s', function (Blueprint $table) {
+        //
+        Schema::create('auditor', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode', 15);
-            $table->json('data')->nullable();
-            $table->float('skor', 8,2)->nullable();
-            $table->integer('kategori');
-            $table->integer('id_prodi');
+            $table->string("nip");
+            $table->string("id_prodi");
             $table->timestamps();
             $table->softDeletes();
+            //
         });
     }
 
@@ -32,6 +31,6 @@ class Standar6 extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('standar6s');
+        Schema::dropIfExists('auditor');
     }
 }
