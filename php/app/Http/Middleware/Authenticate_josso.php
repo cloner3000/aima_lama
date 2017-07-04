@@ -5,6 +5,7 @@ use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Session;
 use App\Pegawai;
+use Illuminate\Support\Facades\DB;
 include(app_path() . '/josso-php-inc/josso-cfg.inc');
 include(app_path() . '/josso-php-inc/class.jossoagent.php');
 //\Composer\Autoload\includeFile(App\josso-php-inc\josso-cfg.inc);
@@ -45,11 +46,15 @@ class Authenticate_josso {
                 $user= $josso_agent->getUserInSession();
                 if(isset($user)){
                     $pegawai = Pegawai::where("nip","=", $user->name)->where("id_jabatan_struktural", '=',"72")->get();
-                    if(null == sizeof($pegawai)){
+                    $dosen = DB::connection("pgsql_3")->table("m_dosen")->join("m_prodi", "m_dosen.pro_kd", "=", "m_prodi.pro_kd")->select("m_prodi.pro_kd", "m_prodi.pro_nm")->where("m_dosen.dsn_nip", "=", $user->name)->get();
+
+                    if(null == sizeof($pegawai) || null == sizeof($dosen)){
                         return redirect("https://profil.um.ac.id");
                     }
-                    $request->merge(array("idUser" =>$user->name));
+                    $request->merge(array("idUser" =>$user->name, "id_prodi"=>$dosen[0]->pro_kd, "nama_prodi"=>$dosen[0]->pro_nm));
                     Session::put('userID', $user->name);
+                    Session::put('id_prodi', $dosen[0]->pro_kd);
+                    Session::put('nama_prodi', $dosen[0]->pro_nm);
 
                     // dd($request->session()->all());
                     return $next($request);

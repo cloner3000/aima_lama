@@ -51,7 +51,7 @@
             </div>
 
             <ul class="nav">
-            @if (Request::is('standar1')||Request::is('standar1/*'))
+            @if (Request::is('/')||Request::is('standar1')||Request::is('standar1/*'))
                 <li class="active">
             @else
                 <li>
@@ -154,7 +154,7 @@
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="ti-user"></i>
-									<p>{{Session::get("userID")}}</p>
+									<p>{{Session::get("userID")}} ({{Session::get('nama_prodi')}})</p>
 									<b class="caret"></b>
                               </a>
                               <ul class="dropdown-menu">

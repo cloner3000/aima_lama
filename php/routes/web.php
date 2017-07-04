@@ -13,22 +13,24 @@
 Route::get('/servicecheck','SecurityController@check');
 Route::get('/servicelogout','SecurityController@logout');
 
+Route::group(['middleware' => 'auth_josso'], function() {
+    Route::get('/', "Standar1Controller@index");
+	Route::get("/standar1", "Standar1Controller@index");
+	Route::post("/standar1/save", "Standar1Controller@save");
+	Route::post("/standar1/update", "Standar1Controller@update");
+	Route::get('/standar2', "Standar2Controller@index");
+	Route::post('/standar2/save', "Standar2Controller@save");
+	Route::post('/standar2/update', "Standar2Controller@update");
+	Route::get('/standar3', 'Standar3Controller@index');
+	Route::post('/standar3/save', 'Standar3Controller@save');
+	Route::get('/standar4', 'Standar4Controller@index');
+	Route::post('/standar4/save', 'Standar4Controller@save');
+	Route::get('/standar5', 'Standar5Controller@index');
+	Route::post('/standar5/save', 'Standar5Controller@save');
+	Route::get('/standar7', "Standar7Controller@index");
+	Route::post('/standar7/save', 'Standar7Controller@save');
+	Route::get('/standar6', "Standar6Controller@index");
+	Route::post('/standar6/save', "Standar6Controller@save");
+	Route::get('/rekap', "RekapController@index");
+});
 
-Route::get('/', "PageController@index");
-Route::get("/standar1", "Standar1Controller@index");
-Route::post("/standar1/save", "Standar1Controller@save");
-Route::post("/standar1/update", "Standar1Controller@update");
-Route::get('/standar2', "Standar2Controller@index");
-Route::post('/standar2/save', "Standar2Controller@save");
-Route::post('/standar2/update', "Standar2Controller@update");
-Route::get('/standar3', 'Standar3Controller@index');
-Route::post('/standar3/save', 'Standar3Controller@save');
-Route::get('/standar4', 'Standar4Controller@index');
-Route::post('/standar4/save', 'Standar4Controller@save');
-Route::get('/standar5', 'Standar5Controller@index');
-Route::post('/standar5/save', 'Standar5Controller@save');
-Route::get('/standar7', "Standar7Controller@index");
-Route::post('/standar7/save', 'Standar7Controller@save');
-Route::get('/standar6', "Standar6Controller@index");
-Route::post('/standar6/save', "Standar6Controller@save");
-Route::get('/rekap', "RekapController@index");
