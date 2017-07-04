@@ -23,11 +23,11 @@
                         </div>
                         <div class="col-md-12">
                             <select name="skor2_1" id="" class="form-control border-input">
-                            <option>--Pilih--</option>  
-                            <option value="4">Tata pamong memenuhi 5 aspek tersebut</option>
-                            <option value="3">Tata pamong memenuhi 4 dari 5 aspek tersebut</option>
-                            <option value="2">Tata pamong memenuhi 3 dari 5 aspek tersebut</option>
-                            <option value="1">Tata pamong memenuhi 1 s.d 2 dari 5 aspek tersebut</option>
+                            <option>--Pilih--</option>
+                            <option value="4" @if (isset($data["2.1"])) @if ($data["2.1"] == 4) selected @endif @endif>Tata pamong memenuhi 5 aspek tersebut</option>
+                            <option value="3" @if (isset($data["2.1"])) @if ($data["2.1"] == 3) selected @endif @endif>Tata pamong memenuhi 4 dari 5 aspek tersebut</option>
+                            <option value="2" @if (isset($data["2.1"])) @if ($data["2.1"] == 2) selected @endif @endif>Tata pamong memenuhi 3 dari 5 aspek tersebut</option>
+                            <option value="1" @if (isset($data["2.1"])) @if ($data["2.1"] == 1) selected @endif @endif>Tata pamong memenuhi 1 s.d 2 dari 5 aspek tersebut</option>
 
                             </select>
                         </div>
@@ -42,10 +42,10 @@
                         <div class="col-md-12">
                             <select name="skor2_2" id="" class="form-control border-input">
                                 <option>--Pilih--</option>
-                                <option value="4">Kepemimpinan program studi memiliki karakteristik yang kuat pada 3 aspek tersebut</option>
-                                <option value="3">Memiliki karakter kepemimpinan yang kuat dalam dua dari karakteristik tersebut</option>
-                                <option value="2">Memiliki karakter kepemimpinan yang kuat dalam salah satu dari karakteristik tersebut</option>
-                                <option value="1">Kepemimpinan program studi lemah dalam karakteristik tersebut</option>
+                                <option value="4" @if (isset($data["2.2"])) @if ($data["2.2"] == 4) selected @endif @endif>Kepemimpinan program studi memiliki karakteristik yang kuat pada 3 aspek tersebut</option>
+                                <option value="3" @if (isset($data["2.2"])) @if ($data["2.2"] == 3) selected @endif @endif>Memiliki karakter kepemimpinan yang kuat dalam dua dari karakteristik tersebut</option>
+                                <option value="2" @if (isset($data["2.2"])) @if ($data["2.2"] == 2) selected @endif @endif>Memiliki karakter kepemimpinan yang kuat dalam salah satu dari karakteristik tersebut</option>
+                                <option value="1" @if (isset($data["2.2"])) @if ($data["2.2"] == 1) selected @endif @endif>Kepemimpinan program studi lemah dalam karakteristik tersebut</option>
                             </select>
                         </div>
                     </li>
@@ -60,11 +60,11 @@
                         <div class="col-md-12">
                             <select name="skor2_6" id="" class="form-control border-input">
                                 <option>--Pilih--</option>
-                                <option value="4">Ada bukti semua usaha dilakukan berikut hasilnya.</option>
-                                <option value="3">Ada bukti sebagian usaha ( > 3) dilakukan.</option>
-                                <option value="2">Ada bukti hanya sebagian kecil usaha (2-3) yang dilakukan.</option>
-                                <option value="1">Ada bukti hanya 1 usaha yang dilakukan.</option>
-                                <option value="0">Tidak ada usaha.</option>
+                                <option value="4" @if (isset($data["2.6"])) @if ($data["2.6"] == 4) selected @endif @endif>Ada bukti semua usaha dilakukan berikut hasilnya.</option>
+                                <option value="3" @if (isset($data["2.6"])) @if ($data["2.6"] == 3) selected @endif @endif>Ada bukti sebagian usaha ( > 3) dilakukan.</option>
+                                <option value="2" @if (isset($data["2.6"])) @if ($data["2.6"] == 2) selected @endif @endif>Ada bukti hanya sebagian kecil usaha (2-3) yang dilakukan.</option>
+                                <option value="1" @if (isset($data["2.6"])) @if ($data["2.6"] == 1) selected @endif @endif>Ada bukti hanya 1 usaha yang dilakukan.</option>
+                                <option value="0" @if (isset($data["2.6"])) @if ($data["2.6"] == 0) selected @endif @endif>Tidak ada usaha.</option>
                             </select>
                         </div>
                     </li>
