@@ -28,8 +28,8 @@
                       <div class="main-panel" style="width:100%">
                         <div class="card-content table-responsive">
                                     <table border="1"  class="table">
-                                      <thead class="text-primary">
-                                    <tr>
+                                      <thead >
+                                    <tr class="warning">
                                       <td width="100px"> 4.3.1.a </td>
       																<td width="100px"> 4.3.1.b </td>
       																<td width="100px"> 4.3.1.c </td>

@@ -58,5 +58,3 @@ Route::get('/servicelogout','SecurityController@logout');
   Route::post('/auditor/standar7/save', 'Standar7AuditorController@save');
   Route::get('/auditor/standar6', "Standar6AuditorController@index");
   Route::post('/auditor/standar6/save', "Standar6AuditorController@save");
-
-});
