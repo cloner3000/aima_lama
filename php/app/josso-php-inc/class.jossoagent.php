@@ -46,16 +46,16 @@ class jossoagent  {
 
 
 	// ---------------------------------------
-	// JOSSO Agent configuration : 
-	// --------------------------------------- 
-	
+	// JOSSO Agent configuration :
+	// ---------------------------------------
+
 	/**
 	 * WS End-point
 	 * @var string
 	 * @access private
 	 */
 	var $endpoint = 'http://localhost:8080';
-	
+
 	/**
 	 * WS Proxy Settings
      * @var string
@@ -80,7 +80,7 @@ class jossoagent  {
      * @access private
      */
 	var $proxypassword = '';
-	
+
 	// Gateway
     /**
      * @var string
@@ -106,8 +106,8 @@ class jossoagent  {
 	var $baseCode ;
 
 	// ---------------------------------------
-	// JOSSO Agent internal state : 
-	// --------------------------------------- 
+	// JOSSO Agent internal state :
+	// ---------------------------------------
 
 	/**
 	 * SOAP Clienty for identity mgr.
@@ -124,14 +124,14 @@ class jossoagent  {
      */
 	var $identityProviderClient;
 
-	
+
 	/**
 	 * SOAP Clienty for session mgr.
      * @var string
      * @access private
      */
 	var $sessionMgrClient;
-	
+
 	/**
 	 * Last occurred error
      * @var string
@@ -145,40 +145,40 @@ class jossoagent  {
      * @access private
      */
 	var $err;
-	
+
 	/**
 	 * @return jossoagent a new Josso PHP Agent instance.
 	 */
 	public static function getNewInstance() {
 		// Get config variable values from josso.inc.
 		global $josso_gatewayLoginUrl, $josso_gatewayLogoutUrl, $josso_endpoint, $josso_proxyhost, $josso_proxyport, $josso_proxyusername, $josso_proxypassword, $josso_agentBasecode;
-		
-		return new jossoagent($josso_gatewayLoginUrl, 
-							  $josso_gatewayLogoutUrl, 
-							  $josso_endpoint, 
-							  $josso_proxyhost, 
-							  $josso_proxyport, 
-							  $josso_proxyusername, 
+
+		return new jossoagent($josso_gatewayLoginUrl,
+							  $josso_gatewayLogoutUrl,
+							  $josso_endpoint,
+							  $josso_proxyhost,
+							  $josso_proxyport,
+							  $josso_proxyusername,
 							  $josso_proxypassword,
 							  $josso_agentBasecode);
 	}
-	
+
 	/**
 	* constructor
 	*
 	* @access private
 	*
-	* @param    string $josso_gatewayLoginUrl 
-	* @param    string $josso_gatewayLogoutUrl 
+	* @param    string $josso_gatewayLoginUrl
+	* @param    string $josso_gatewayLogoutUrl
 	* @param    string $josso_endpoint SOAP server
 	* @param    string $josso_proxyhost
 	* @param    string $josso_proxyport
 	* @param    string $josso_proxyusername
 	* @param    string $josso_proxypassword
 	*/
-	function jossoagent($josso_gatewayLoginUrl, $josso_gatewayLogoutUrl, $josso_endpoint, 
+	function jossoagent($josso_gatewayLoginUrl, $josso_gatewayLogoutUrl, $josso_endpoint,
 						$josso_proxyhost, $josso_proxyport, $josso_proxyusername, $josso_proxypassword, $josso_agentBasecode) {
-	
+
 		// WS Config
 		$this->endpoint = $josso_endpoint;
 		$this->proxyhost = $josso_proxyhost;
@@ -186,17 +186,17 @@ class jossoagent  {
 		$this->proxyusername = $josso_proxyusername;
 		$this->proxypassoword = $josso_proxypassword;
 		$this->baseCode = $josso_agentBasecode;
-		
+
 		// Agent config
 		$this->gatewayLoginUrl = $josso_gatewayLoginUrl;
 		$this->gatewayLogoutUrl = $josso_gatewayLogoutUrl;
-		
+
 		if (isset($josso_sessionAccessMinInterval)) {
 			$this->sessionAccessMinInterval = $josso_sessionAccessMinInterval;
 		}
-										
+
 	}
-	
+
 	/**
 	* Gets the authnenticated jossouser, if any.
 	*
@@ -221,7 +221,7 @@ class jossoagent  {
 		//print_r($findUserInSessionResponse[SSOUser]);
 		//print_r($findUserInSessionResponse[SSOUser]);
 	}
-	
+
 	/**
 	* Returns true if current authenticated user is associated to the received role.
 	* If no user is logged in, returns false.
@@ -239,14 +239,14 @@ class jossoagent  {
 		}
 
 		$roles = $this->findRolesBySSOSessionId($sessionId) ;
-		
+
 		foreach($roles as $role) {
-			if ($role->getName() == $rolename) 
+			if ($role->getName() == $rolename)
 				return TRUE;
 		}
 		return FALSE;
 	}
-	
+
 	/**
 	* Returns all roles associated to the given username.
 	*
@@ -271,15 +271,15 @@ class jossoagent  {
 			}
 			return $roles;
 		}
-		
+
 	}
-	
+
 	/**
 	 * Sends a keep-alive notification to the SSO server so that SSO sesison is not lost.
 	 * @access public
 	 */
 	function accessSession() {
-	
+
 		// Check if a session ID is pressent.
 		$sessionId = $this->getSessionid();
 		if (!isset($sessionId ) || $sessionId == '') {
@@ -301,9 +301,9 @@ class jossoagent  {
         }
 
         return $accessSessionResponse['ssoSessionId'];
-		
+
 	}
-	
+
 	/**
 	 * Returns the URL where the user should be redireted to authenticate.
 	 *
@@ -330,14 +330,14 @@ class jossoagent  {
 
         $resolveAuthenticationAssertionRequest = array('ResolveAuthenticationAssertionRequest' => array('assertionId' => $assertionId));
         $resolveAuthenticationAssertionResponse = $soapclient->call('resolveAuthenticationAssertion', $resolveAuthenticationAssertionRequest);
-        
+
 		if (! $this->checkError($soapclient)) {
 			// Return SSO Session ID
 			return $resolveAuthenticationAssertionResponse['ssoSessionId'];
 		}
 
 	}
-	
+
 	/**
 	 * Returns the URL where the user should be redireted to logout.
 	 *
@@ -356,7 +356,7 @@ class jossoagent  {
 	    return $this->baseCode;
     }
 
-	
+
 	/**
 	 * Allows client applications to access error messages
 	 *
@@ -365,7 +365,7 @@ class jossoagent  {
 	function getError() {
 		return $this->err;
 	}
-	
+
 	/**
 	 * Allows client applications to access error messages
 	 *
@@ -374,11 +374,11 @@ class jossoagent  {
 	function getFault() {
 		return $this->fault;
 	}
-	
+
 	//----------------------------------------------------------------------------------------
 	// Protected methods intended to be invoked only within this class or subclasses.
 	//----------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Gets current JOSSO session id, if any.
 	 *
@@ -388,7 +388,7 @@ class jossoagent  {
 	    if (isset($_COOKIE['JOSSO_SESSIONID']))
 			return $_COOKIE['JOSSO_SESSIONID'];
 	}
-	
+
 	/**
 	 * Factory method to build a user from soap data.
 	 *
@@ -398,7 +398,7 @@ class jossoagent  {
 	 * @access private
 	 */
 	function newUser($data) {
-		// Build a new jossouser 
+		// Build a new jossouser
 		$username = $data['name'];
 		$properties = $data['properties'];
 		//print_r($properties);
@@ -406,7 +406,7 @@ class jossoagent  {
 		//print_r($user);
 		return $user;
 	}
-	
+
 	/**
 	 * Factory method to build a role from soap data.
 	 *
@@ -416,12 +416,12 @@ class jossoagent  {
 	 * @access private
 	 */
 	function newRole($data) {
-		// Build a new jossouser 
+		// Build a new jossouser
 		$rolename = $data['!name'];
 		$role = new jossorole($rolename);
 		return $role;
 	}
-	
+
 	/**
 	 * Checks if an error occured with the received soapclient and stores information in agent state.
 	 *
@@ -429,7 +429,7 @@ class jossoagent  {
 	 */
 	function checkError($soapclient) {
 		// Clear old error/fault information.
-		unset($this->fault);				
+		unset($this->fault);
 		unset($this->err);
 
 		// Check for a fault
@@ -441,14 +441,14 @@ class jossoagent  {
 			if ($soapclient->error_str != '') {
 			    $this->err = $soapclient->error_str;
 				return TRUE;
-			} 
+			}
 		}
-		
+
 		// No errors ...
 		return FALSE;
-	
+
 	}
-	
+
 	/**
 	 * Gets the soap client to access identity service.
 	 *
@@ -485,7 +485,7 @@ class jossoagent  {
 		return $this->identityProviderClient;
 	}
 
-	
+
 	/**
 	 * Gets the soap client to access session service.
 	 *
