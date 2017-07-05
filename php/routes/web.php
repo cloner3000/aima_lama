@@ -31,7 +31,19 @@ Route::group(['middleware' => 'auth_josso'], function() {
 	Route::post('/standar7/save', 'Standar7Controller@save');
 	Route::get('/standar6', "Standar6Controller@index");
 	Route::post('/standar6/save', "Standar6Controller@save");
-	Route::get('/rekap', "RekapController@index");
+  Route::get('/rekap', "NilaiStandar1Controller@index");
+  Route::get('/rekap/nilaistandar1', "NilaiStandar1Controller@index");
+  Route::get('/rekap/nilaistandar2', "NilaiStandar2Controller@index");
+  Route::get('/rekap/nilaistandar3', "NilaiStandar3Controller@index");
+  Route::get('/rekap/nilaistandar4', "NilaiStandar4Controller@index");
+
+
+
+
+
+
+
+
   Route::get('/auditor', "AuditorController@index");
   Route::get('/auditor/isi', "Standar1AuditorController@index");
   //auditor
