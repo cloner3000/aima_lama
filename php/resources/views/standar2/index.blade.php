@@ -9,6 +9,8 @@
         <div class="content">
             <form @if(0==sizeof($data)) action="/standar2/save" @else action="/standar2/update" @endif method="post" class="kuesioner">
             {{csrf_field()}}
+            <fieldset @if(sizeof($data)>0) disabled @endif>
+
             <input type="hidden" name="skor2_1_old" value="@if(isset($data["2.1"])) {{ $data["2.1"] }} @endif">
             <input type="hidden" name="skor2_2_old" value="@if(isset($data["2.2"])) {{ $data["2.2"] }} @endif">
             <input type="hidden" name="skor2_6_old" value="@if(isset($data["2.6"])) {{ $data["2.6"] }} @endif">
@@ -69,9 +71,10 @@
                         </div>
                     </li>
                 </ul>
+              </fieldset>
 
             <div class="footer text-center">
-                <button type="submit" class="btn btn-info btn-fill btn-wd">Simpan</button>
+                <button type="submit" class="btn btn-info btn-fill btn-wd" @if(sizeof($data)>0) disabled @endif>Simpan</button>
             <div class="clearfix"></div>
                 <!-- <div class="chart-legend">
                     <i class="fa fa-circle text-info"></i> Open

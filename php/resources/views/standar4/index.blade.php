@@ -9,6 +9,8 @@
           <div class="content">
               <form action="/standar4/save" method="post" class="kuesioner">
                 {{ csrf_field() }}
+
+                <fieldset @if(sizeof($data)>0) disabled @endif>
                   <ul class="list-unstyled">
 
                       <li class="row">
@@ -567,19 +569,20 @@
                       </li>
 
                   </ul>
+                </fieldset>
 
-              <div class="footer text-center">
-                  <button type="submit" class="btn btn-info btn-fill btn-wd">Simpan</button>
-              <div class="clearfix"></div>
-                  <!-- <div class="chart-legend">
-                      <i class="fa fa-circle text-info"></i> Open
-                      <i class="fa fa-circle text-danger"></i> Click
-                      <i class="fa fa-circle text-warning"></i> Click Second Time
-                  </div>
-                  <hr>
-                  <div class="stats">
-                      <i class="ti-reload"></i> Updated 3 minutes ago
-                  </div> -->
+                <div class="footer text-center">
+                    <button type="submit" class="btn btn-info btn-fill btn-wd" @if(sizeof($data)>0) disabled @endif>Simpan</button>
+                <div class="clearfix"></div>
+                <!-- <div class="chart-legend">
+                    <i class="fa fa-circle text-info"></i> Open
+                    <i class="fa fa-circle text-danger"></i> Click
+                    <i class="fa fa-circle text-warning"></i> Click Second Time
+                </div>
+                <hr>
+                <div class="stats">
+                    <i class="ti-reload"></i> Updated 3 minutes ago
+                </div> -->
               </div>
               </form>
           </div>
