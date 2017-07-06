@@ -7,7 +7,8 @@
           <p class="category">Standar 5</p>
       </div>
       <div class="content">
-          <form action="/auditor/isi/standar5/save" method="post" class="kuesioner">
+        <form action="/auditor/isi/{{$idprodi}}/standar5/save" method="post" class="kuesioner">
+            <fieldset @if(sizeof($data) > 0) disabled @endif>
             {{csrf_field()}}
               <ul class="list-unstyled">
 
@@ -293,7 +294,7 @@
                                           </select>
                                       </div>
                                       <div class="form-grpu col-md-4 form-inline">
-                                        <input class="form-control border-input" type="text" name="rpta5_5_2" id="5_5_2_rpta" value="<?php if(!$dataCheck) echo json_decode($data[10]->data)[1] ?>" required="">
+                                        <input class="form-control border-input" type="text" name="rpta5_5_2" id="5_5_2_rpta" value="<?php if(!$dataCheck) echo json_decode($data[10]->data)[0] ?>" required="">
                                         <small>Bulan penyelesaian</small>
                                       </div>
                             </div>
@@ -392,9 +393,10 @@
                           </div>
                       </div>
                   </li>
+                  </fieldset>
 
           <div class="footer text-center">
-              <button type="submit" class="btn btn-info btn-fill btn-wd">Simpan</button>
+              <button type="submit" class="btn btn-info btn-fill btn-wd" @if (sizeof($data) > 0) disabled @endif>Simpan</button>
           <div class="clearfix"></div>
               <!-- <div class="chart-legend">
                   <i class="fa fa-circle text-info"></i> Open

@@ -7,7 +7,7 @@
             <p class="category">Standar 2</p>
         </div>
         <div class="content">
-            <form @if(0==sizeof($data)) action="/auditor/isi/standar2/save" @else action="/auditor/isi/standar2/update" @endif method="post" class="kuesioner">
+            <form @if(0==sizeof($data)) action="/auditor/isi/{{$idprodi}}/standar2/save" @else action="/auditor/isi/{{$idprodi}}/standar2/update" @endif method="post" class="kuesioner">
             {{csrf_field()}}
             <input type="hidden" name="skor2_1_old" value="@if(isset($data["2.1"])) {{ $data["2.1"] }} @endif">
             <input type="hidden" name="skor2_2_old" value="@if(isset($data["2.2"])) {{ $data["2.2"] }} @endif">
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <select name="skor2_1" id="" class="form-control border-input">
+                            <select name="skor2_1" id="" class="form-control border-input" @if (sizeof($data) > 0) disabled @endif>
                             <option>--Pilih--</option>
                             <option value="4" @if (isset($data["2.1"])) @if ($data["2.1"] == 4) selected @endif @endif>Tata pamong memenuhi 5 aspek tersebut</option>
                             <option value="3" @if (isset($data["2.1"])) @if ($data["2.1"] == 3) selected @endif @endif>Tata pamong memenuhi 4 dari 5 aspek tersebut</option>
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <select name="skor2_2" id="" class="form-control border-input">
+                            <select name="skor2_2" id="" class="form-control border-input" @if (sizeof($data) > 0) disabled @endif>
                                 <option>--Pilih--</option>
                                 <option value="4" @if (isset($data["2.2"])) @if ($data["2.2"] == 4) selected @endif @endif>Kepemimpinan program studi memiliki karakteristik yang kuat pada 3 aspek tersebut</option>
                                 <option value="3" @if (isset($data["2.2"])) @if ($data["2.2"] == 3) selected @endif @endif>Memiliki karakter kepemimpinan yang kuat dalam dua dari karakteristik tersebut</option>
@@ -58,7 +58,7 @@
 
                         </div>
                         <div class="col-md-12">
-                            <select name="skor2_6" id="" class="form-control border-input">
+                            <select name="skor2_6" id="" class="form-control border-input" @if (sizeof($data) > 0) disabled @endif>
                                 <option>--Pilih--</option>
                                 <option value="4" @if (isset($data["2.6"])) @if ($data["2.6"] == 4) selected @endif @endif>Ada bukti semua usaha dilakukan berikut hasilnya.</option>
                                 <option value="3" @if (isset($data["2.6"])) @if ($data["2.6"] == 3) selected @endif @endif>Ada bukti sebagian usaha ( > 3) dilakukan.</option>
@@ -71,7 +71,7 @@
                 </ul>
 
             <div class="footer text-center">
-                <button type="submit" class="btn btn-info btn-fill btn-wd">Simpan</button>
+                <button type="submit" class="btn btn-info btn-fill btn-wd" @if (sizeof($data) > 0) disabled @endif>Simpan</button>
             <div class="clearfix"></div>
                 <!-- <div class="chart-legend">
                     <i class="fa fa-circle text-info"></i> Open

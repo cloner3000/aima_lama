@@ -47,100 +47,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="sidebar" data-background-color="white" data-active-color="danger">
 
-          <!--
-              Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
-              Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
-          -->
-
-              <!-- <div class="sidebar-wrapper">
-                  <div class="logo">
-                      <a href="http://spm.um.ac.id/" class="simple-text">
-                          SPM UM - Auditor
-                      </a>
-                  </div>
-
-                  <ul class="nav">
-                  @if (Request::is('standar1')||Request::is('standar1/*'))
-                      <li class="active">
-                  @else
-                      <li>
-                  @endif
-                          <a href="{{ url('/standar1') }}">
-                              <i class="ti-panel"></i>
-                              <p>Standart 1</p>
-                          </a>
-                      </li>
-                  @if (Request::is('standar2')||Request::is('standar2/*'))
-                      <li class="active">
-                  @else
-                      <li>
-                  @endif
-                          <a href="{{ url('/standar2') }}">
-                              <i class="ti-user"></i>
-                              <p>Standart 2</p>
-                          </a>
-                      </li>
-                  @if (Request::is('standar3')||Request::is('standar3/*'))
-                      <li class="active">
-                  @else
-                      <li>
-                  @endif
-                          <a href="{{ url('/standar3') }}">
-                              <i class="ti-view-list-alt"></i>
-                              <p>Standart 3</p>
-                          </a>
-                      </li>
-                  @if (Request::is('standar4')||Request::is('standar4/*'))
-                      <li class="active">
-                  @else
-                      <li>
-                  @endif
-                          <a href="{{ url('/standar4') }}">
-                              <i class="ti-text"></i>
-                              <p>Standart 4</p>
-                          </a>
-                      </li>
-                  @if (Request::is('standar5')||Request::is('standar5/*'))
-                      <li class="active">
-                  @else
-                      <li>
-                  @endif
-                          <a href="{{ url('/standar5') }}">
-                              <i class="ti-pencil-alt2"></i>
-                              <p>Standart 5</p>
-                          </a>
-                      </li>
-                  @if (Request::is('standar6')||Request::is('standar6/*'))
-                      <li class="active">
-                  @else
-                      <li>
-                  @endif
-                          <a href="{{ url('/standar6') }}">
-                              <i class="ti-map"></i>
-                              <p>Standart 6</p>
-                          </a>
-                      </li>
-                  @if (Request::is('standar7')||Request::is('standar7/*'))
-                      <li class="active">
-                  @else
-                      <li>
-                  @endif
-                          <a href="{{ url('/standar7') }}">
-                              <i class="ti-bell"></i>
-                              <p>Standart 7</p>
-                          </a>
-                      </li>
-                      <li class="active-pro">
-                          <a href="{{ url('/rekap') }}">
-                              <i class="ti-export"></i>
-                              <p>Rekapitulasi</p>
-                          </a>
-                      </li>
-                  </ul>
-              </div> -->
-          </div>
 
         <div class="main-panel" style="width:100%">
             <nav class="navbar navbar-default">
@@ -202,48 +109,50 @@
                         </thead>
                           <tbody>
                             <tr>
-                              <td>Fakultas Teknik</td>
-                              <td>
-                                <div class="col-xs-5">
-                                  <select class="form-control border-input" name="">
-                                  <option>--Pilih Prodi--</option>
-                                    <option value="1">--Jurusan Teknik Elektro--</option>
-                                    <option value="">Prodi S1 Pendidikan Teknik Informatika</option>
-                                    <option value="">Prodi S1 Pendidikan Teknik Elektro</option>
-                                    <option value="">Prodi S1 Teknik Informatika</option>
-                                    <option value="">Prodi S1 Teknik Elektro</option>
-                                    <option value="">Prodi D3 Teknik Elektro</option>
-                                    <option value="">Prodi D3 Elektronika</option>
-                                    <option value="">--Jurusan Teknik Sipil--</option>
-                                    <option value="">Prodi S1 Pendidikan Teknik Bangunan</option>
-                                    <option value="">Prodi S1 Teknik Sipil</option>
-                                    <option value="">Prodi D3 Teknik Sipil dan Bangunan</option>
-                                    <option value="">--Jurusan Teknik Mesin--</option>
-                                    <option value="">Prodi S1 Pendidikan Teknik Mesin</option>
-                                    <option value="">Prodi S1 Pendidikan Teknik Otomotif</option>
-                                    <option value="">Prodi S1 Teknik Mesin</option>
-                                    <option value="">Prodi D3 Teknik Mesin</option>
-                                    <option value="">Prodi D3 Teknik Otomotif</option>
-                                    <option value="">--Jurusan Teknologi Industri--</option>
-                                    <option value="">Prodi S1 Pendidikan Tata Boga</option>
-                                    <option value="">Prodi S1 Pendidikan Tata Busana</option>
-                                    <option value="">Prodi D3 Tata Boga</option>
-                                    <option value="">Prodi D3 Tata Busana</option>
-                                  </select>
-                                </div>
-                              </td>
-                              <td>
-                                <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
-                              </td>
-                              <td>
-                                <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
-                              </td>
-                              
-                              <td>
-                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
-                              </td>
+                              <form action="" method="post">
+                                {{ csrf_field() }}
+                                <td>Fakultas Teknik</td>
+                                <td>
+                                  <div class="col-xs-5">
+                                    <select class="form-control border-input" name="idprodi">
+                                    <option>--Pilih Prodi--</option>
+                                      <option value="">--Jurusan Teknik Elektro--</option>
+                                      <option value="1">Prodi S1 Pendidikan Teknik Informatika</option>
+                                      <option value="2">Prodi S1 Pendidikan Teknik Elektro</option>
+                                      <option value="3">Prodi S1 Teknik Informatika</option>
+                                      <option value="4">Prodi S1 Teknik Elektro</option>
+                                      <option value="5">Prodi D3 Teknik Elektro</option>
+                                      <option value="6">Prodi D3 Elektronika</option>
+                                      <option value="">--Jurusan Teknik Sipil--</option>
+                                      <option value="7">Prodi S1 Pendidikan Teknik Bangunan</option>
+                                      <option value="8">Prodi S1 Teknik Sipil</option>
+                                      <option value="9">Prodi D3 Teknik Sipil dan Bangunan</option>
+                                      <option value="">--Jurusan Teknik Mesin--</option>
+                                      <option value="10">Prodi S1 Pendidikan Teknik Mesin</option>
+                                      <option value="11">Prodi S1 Pendidikan Teknik Otomotif</option>
+                                      <option value="12">Prodi S1 Teknik Mesin</option>
+                                      <option value="13">Prodi D3 Teknik Mesin</option>
+                                      <option value="14">Prodi D3 Teknik Otomotif</option>
+                                      <option value="">--Jurusan Teknologi Industri--</option>
+                                      <option value="15">Prodi S1 Pendidikan Tata Boga</option>
+                                      <option value="16">Prodi S1 Pendidikan Tata Busana</option>
+                                      <option value="17">Prodi D3 Tata Boga</option>
+                                      <option value="18">Prodi D3 Tata Busana</option>
+                                    </select>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="col-xs-3">
+                                  <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
+                                </td>
+                                <td>
+                                  <div class="col-xs-3">
+                                  <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
+                                </td>
+                                <td>
+                                  <button type="submit" class="btn btn-primary btn-md">Isi</button>
+                                </td>
+                              </form>
                             </tr>
 
                             <tr>
@@ -253,24 +162,24 @@
                                   <select class="form-control border-input" name="">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Sastra Indonesia--</option>
-                                    <option value="">Prodi S1 Pendidikan Bahasa Sastra Indonesia dan Daerah</option>
-                                    <option value="">Prodi S1 Bahasa dan Sastra Indonesia</option>
-                                    <option value="">Prodi S1 Ilmu Perpustakaan</option>
-                                    <option value="">Prodi D3 Perpustakaan</option>
+                                    <option value="19">Prodi S1 Pendidikan Bahasa Sastra Indonesia dan Daerah</option>
+                                    <option value="20">Prodi S1 Bahasa dan Sastra Indonesia</option>
+                                    <option value="21">Prodi S1 Ilmu Perpustakaan</option>
+                                    <option value="22">Prodi D3 Perpustakaan</option>
                                     <option value="">--Jurusan Sastra Inggris--</option>
-                                    <option value="">Prodi S1 Pendidikan Bahasa Inggris</option>
-                                    <option value="">Prodi S1 Bahasa dan Sastra Inggris</option>
+                                    <option value="23">Prodi S1 Pendidikan Bahasa Inggris</option>
+                                    <option value="24">Prodi S1 Bahasa dan Sastra Inggris</option>
                                     <option value="">--Jurusan Sastra Arab--</option>
-                                    <option value="">Prodi S1 Pendidikan Bahasa Arab</option>
+                                    <option value="25">Prodi S1 Pendidikan Bahasa Arab</option>
                                     <option value="">--Jurusan Sastra Jerman--</option>
-                                    <option value="">Prodi S1 Pendidikan Bahasa Jerman</option>
+                                    <option value="26">Prodi S1 Pendidikan Bahasa Jerman</option>
                                     <option value="">--Jurusan Sastra Mandarin--</option>
-                                    <option value="">Prodi S1 Pendidikan Bahasa Mandarin</option>
+                                    <option value="27">Prodi S1 Pendidikan Bahasa Mandarin</option>
                                     <option value="">--Jurusan Seni dan Desain--</option>
-                                    <option value="">Prodi S1 Pendidikan Seni Rupa</option>
-                                    <option value="">Prodi S1 Pendidikan Seni Tari dan Musik</option>
-                                    <option value="">Prodi S1 Desain Komunikasi Visual</option>
-                                    <option value="">Prodi D3 Game Animasi</option>
+                                    <option value="28">Prodi S1 Pendidikan Seni Rupa</option>
+                                    <option value="29">Prodi S1 Pendidikan Seni Tari dan Musik</option>
+                                    <option value="30">Prodi S1 Desain Komunikasi Visual</option>
+                                    <option value="31">Prodi D3 Game Animasi</option>
                                   </select>
                                 </div>
                               </td>
@@ -294,17 +203,17 @@
                                   <select class="form-control border-input" name="">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Bimbingan dan Konseling--</option>
-                                    <option value="">Prodi S1 Bimbingan dan Konseling</option>
+                                    <option value="32">Prodi S1 Bimbingan dan Konseling</option>
                                     <option value="">--Jurusan Teknologi Pendidikan--</option>
-                                    <option value="">Prodi S1 Teknologi Pendidikan</option>
+                                    <option value="33">Prodi S1 Teknologi Pendidikan</option>
                                     <option value="">--Jurusan Administrasi Pendidikan--</option>
-                                    <option value="">Prodi S1 Administrasi Pendidikan</option>
+                                    <option value="34">Prodi S1 Administrasi Pendidikan</option>
                                     <option value="">--Jurusan Pendidikan Luar Sekolah--</option>
-                                    <option value="">Prodi S1 Pendidikan Luar Sekolah</option>
+                                    <option value="35">Prodi S1 Pendidikan Luar Sekolah</option>
                                     <option value="">--Jurusan Kependidikan Sekolah Dasar dan Prasekolah--</option>
-                                    <option value="">Prodi S1 Pendidikan Guru Sekolah Dasar</option>
-                                    <option value="">Prodi S1 Pendidikan Guru Pendidikan Anak Usia Dini</option>
-                                    <option value="">Prodi S1 Pendidikan Luar Biasa</option>
+                                    <option value="36">Prodi S1 Pendidikan Guru Sekolah Dasar</option>
+                                    <option value="37">Prodi S1 Pendidikan Guru Pendidikan Anak Usia Dini</option>
+                                    <option value="38">Prodi S1 Pendidikan Luar Biasa</option>
                                   </select>
                                 </div>
                               </td>
@@ -316,7 +225,7 @@
                                 <div class="col-xs-3">
                                 <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
-                              
+
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
                               </td>
@@ -329,18 +238,18 @@
                                   <select class="form-control border-input" name="">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Matematika--</option>
-                                    <option value="">Prodi S1 Pendidikan Matematika</option>
-                                    <option value="">Prodi S1 Matematika</option>
+                                    <option value="39">Prodi S1 Pendidikan Matematika</option>
+                                    <option value="40">Prodi S1 Matematika</option>
                                     <option value="">--Jurusan Fisika--</option>
-                                    <option value="">Prodi S1 Pendidikan Fisika</option>
-                                    <option value="">Prodi S1 Fisika</option>
+                                    <option value="41">Prodi S1 Pendidikan Fisika</option>
+                                    <option value="42">Prodi S1 Fisika</option>
                                     <option value="">--Jurusan Kimia--</option>
-                                    <option value="">Prodi S1 Pendidikan Kimia</option>
-                                    <option value="">Prodi S1 Kimia</option>
-                                    <option value="">Prodi S1 Pendidikan Ilmu Pengetahuan Alam</option>
+                                    <option value="43">Prodi S1 Pendidikan Kimia</option>
+                                    <option value="44">Prodi S1 Kimia</option>
+                                    <option value="45">Prodi S1 Pendidikan Ilmu Pengetahuan Alam</option>
                                     <option value="">--Jurusan Biologi--</option>
-                                    <option value="">Prodi S1 Pendidikan Biologi</option>
-                                    <option value="">Prodi S1 Biologi</option>
+                                    <option value="46">Prodi S1 Pendidikan Biologi</option>
+                                    <option value="47">Prodi S1 Biologi</option>
                                   </select>
                                 </div>
                               </td>
@@ -352,7 +261,7 @@
                                 <div class="col-xs-3">
                                 <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
-                              
+
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
                               </td>
@@ -383,7 +292,7 @@
                                 <div class="col-xs-3">
                                 <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
-                              
+
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
                               </td>

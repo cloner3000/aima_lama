@@ -14,7 +14,6 @@ Route::get('/servicecheck','SecurityController@check');
 Route::get('/servicelogout','SecurityController@logout');
 
 Route::group(['middleware' => 'auth_josso'], function() {
-
   Route::get('/', "Standar1Controller@index");
 	Route::get("/standar1", "Standar1Controller@index");
 	Route::post("/standar1/save", "Standar1Controller@save");
@@ -33,7 +32,6 @@ Route::group(['middleware' => 'auth_josso'], function() {
 	Route::get('/standar6', "Standar6Controller@index");
 	Route::post('/standar6/save', "Standar6Controller@save");
 
-
   Route::get('/rekap', "NilaiStandar1Controller@index");
   Route::get('/rekap/nilaistandar1', "NilaiStandar1Controller@index");
   Route::get('/rekap/nilaistandar2', "NilaiStandar2Controller@index");
@@ -44,46 +42,22 @@ Route::group(['middleware' => 'auth_josso'], function() {
   Route::get('/rekap/nilaistandar7', "NilaiStandar7Controller@index");
 
   Route::get('/auditor', "AuditorController@index");
-  Route::get('/auditor/isi', "Standar1AuditorController@index");
+  Route::post('/auditor', "AuditorController@isi");
   //auditor
-  Route::get("/auditor/isi/standar1", "Standar1AuditorController@index");
-  Route::post("/auditor/isi/standar1/save", "Standar1AuditorController@save");
-  Route::post("/auditor/isi/standar1/update", "Standar1AuditorController@update");
-  Route::get('/auditor/isi/standar2', "Standar2AuditorController@index");
-  Route::post('/auditor/isi/standar2/save', "Standar2AuditorController@save");
-  Route::post('/auditor/isi/standar2/update', "Standar2AuditorController@update");
-  Route::get('/auditor/isi/standar3', 'Standar3AuditorController@index');
-  Route::post('/auditor/isi/standar3/save', 'Standar3AuditorController@save');
-  Route::get('/auditor/isi/standar4', 'Standar4AuditorController@index');
-  Route::post('/auditor/isi/standar4/save', 'Standar4AuditorController@save');
-  Route::get('/auditor/isi/standar5', 'Standar5AuditorController@index');
-  Route::post('/auditor/isi/standar5/save', 'Standar5AuditorController@save');
-  Route::get('/auditor/isi/standar7', "Standar7AuditorController@index");
-  Route::post('/auditor/isi/standar7/save', 'Standar7AuditorController@save');
-  Route::get('/auditor/isi/standar6', "Standar6AuditorController@index");
-  Route::post('/auditor/isi/standar6/save', "Standar6AuditorController@save");
+  Route::get("/auditor/isi/{idprodi}/standar1", "Standar1AuditorController@index");
+  Route::post("/auditor/isi/{idprodi}/standar1/save", "Standar1AuditorController@save");
+  Route::post("/auditor/isi/{idprodi}/standar1/update", "Standar1AuditorController@update");
+  Route::get('/auditor/isi/{idprodi}/standar2', "Standar2AuditorController@index");
+  Route::post('/auditor/isi/{idprodi}/standar2/save', "Standar2AuditorController@save");
+  Route::post('/auditor/isi/{idprodi}/standar2/update', "Standar2AuditorController@update");
+  Route::get('/auditor/isi/{idprodi}/standar3', 'Standar3AuditorController@index');
+  Route::post('/auditor/isi/{idprodi}/standar3/save', 'Standar3AuditorController@save');
+  Route::get('/auditor/isi/{idprodi}/standar4', 'Standar4AuditorController@index');
+  Route::post('/auditor/isi/{idprodi}/standar4/save', 'Standar4AuditorController@save');
+  Route::get('/auditor/isi/{idprodi}/standar5', 'Standar5AuditorController@index');
+  Route::post('/auditor/isi/{idprodi}/standar5/save', 'Standar5AuditorController@save');
+  Route::get('/auditor/isi/{idprodi}/standar7', "Standar7AuditorController@index");
+  Route::post('/auditor/isi/{idprodi}/standar7/save', 'Standar7AuditorController@save');
+  Route::get('/auditor/isi/{idprodi}/standar6', "Standar6AuditorController@index");
+  Route::post('/auditor/isi/{idprodi}/standar6/save', "Standar6AuditorController@save");
 });
-
-
-
-  Route::get('/auditor', "AuditorController@index");
-  Route::get('/auditor/isi', "Standar1AuditorController@index");
-  //auditor
-  Route::get("/auditor/standar1", "Standar1AuditorController@index");
-  Route::post("/auditor/standar1/save", "Standar1AuditorController@save");
-  Route::post("/auditor/standar1/update", "Standar1AuditorController@update");
-  Route::get('/auditor/standar2', "Standar2AuditorController@index");
-  Route::post('/auditor/standar2/save', "Standar2AuditorController@save");
-  Route::post('/auditor/standar2/update', "Standar2AuditorController@update");
-  Route::get('/auditor/standar3', 'Standar3AuditorController@index');
-  Route::post('/auditor/standar3/save', 'Standar3AuditorController@save');
-  Route::get('/auditor/standar4', 'Standar4AuditorController@index');
-  Route::post('/auditor/standar4/save', 'Standar4AuditorController@save');
-  Route::get('/auditor/standar5', 'Standar5AuditorController@index');
-  Route::post('/auditor/standar5/save', 'Standar5AuditorController@save');
-  Route::get('/auditor/standar7', "Standar7AuditorController@index");
-  Route::post('/auditor/standar7/save', 'Standar7AuditorController@save');
-  Route::get('/auditor/standar6', "Standar6AuditorController@index");
-  Route::post('/auditor/standar6/save', "Standar6AuditorController@save");
-
-

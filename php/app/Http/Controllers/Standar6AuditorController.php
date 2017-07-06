@@ -4,21 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Standar6Auditor;
+use App\Standar5Auditor;
 
 class Standar6AuditorController extends Controller
 {
-    public function index()
+    public function index($idprodi)
     {
+      $standar5 = Standar5Auditor::where("id_prodi", $idprodi)->get();
+      if($standar5->count() <= 0){
+        $adadata = false;
+        return redirect("/auditor/isi/$idprodi/standar5");
+      }else{
+        $adadata = true;
+      }
         $standar="Standar 6";
-        $data = Standar6Auditor::select('kode', 'data', 'skor', 'kategori')->where('id_prodi', '=', '1')->orderBy('kode', 'asc')->get();
+        $data = Standar6Auditor::select('kode', 'data', 'skor', 'kategori')->where([['id_prodi', '=', $idprodi], ['auditor_id', '=', '1']])->orderBy('kode', 'asc')->get();
         if(!$data->count()){
           $dataCheck = true;
         }else{
           $dataCheck = false;
         }
-        return view('auditor/standar6.index', compact('standar', 'data', 'dataCheck'));
+        return view('auditor/standar6.index', compact('standar', 'data', 'dataCheck', 'idprodi'));
     }
-     public function save(Request $request)
+     public function save(Request $request, $idprodi)
      {
        //PERHITUNGAN 6.2.1
        $nDOM = $request->nilai6_2_1_dana;
@@ -108,12 +116,13 @@ class Standar6AuditorController extends Controller
       $skor6_4_1_e = $prosiding;
 
       //cek apakah jurusan tersebut sudah pernah input atau belum
-      $oldStandar6 = Standar6Auditor::where('id_prodi', '=', '1')->first();
+      $oldStandar6 = Standar6Auditor::where('id_prodi', '=', $idprodi)->first();
       if($oldStandar6){
         //jika sudah maka ...
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.2.1']
         ])->first();
         $standar6->kategori = $kategori6_2_1;
@@ -122,7 +131,8 @@ class Standar6AuditorController extends Controller
         $standar6->save();
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.2.2']
         ])->first();
         $standar6->kategori = $kategori6_2_2;
@@ -131,7 +141,8 @@ class Standar6AuditorController extends Controller
         $standar6->save();
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.2.3']
         ])->first();
         $standar6->kategori = $kategori6_2_3;
@@ -140,7 +151,8 @@ class Standar6AuditorController extends Controller
         $standar6->save();
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.3.1']
         ])->first();
         $standar6->kategori = $kategori6_3_1;
@@ -149,7 +161,8 @@ class Standar6AuditorController extends Controller
         $standar6->save();
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.4.1.a']
         ])->first();
         $standar6->kategori = $kategori6_4_1_a;
@@ -158,7 +171,8 @@ class Standar6AuditorController extends Controller
         $standar6->save();
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.4.1.b']
         ])->first();
         $standar6->kategori = $kategori6_4_1_b;
@@ -167,7 +181,8 @@ class Standar6AuditorController extends Controller
         $standar6->save();
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.4.1.c']
         ])->first();
         $standar6->kategori = $kategori6_4_1_c;
@@ -176,7 +191,8 @@ class Standar6AuditorController extends Controller
         $standar6->save();
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.4.1.d']
         ])->first();
         $standar6->kategori = $kategori6_4_1_d;
@@ -185,7 +201,8 @@ class Standar6AuditorController extends Controller
         $standar6->save();
 
         $standar6 = Standar6Auditor::where([
-          ['id_prodi', '=', '1'],
+          ['id_prodi', '=', $idprodi],
+          ['auditor_id', '=', '1'],
           ['kode', '=', '6.4.1.e']
         ])->first();
         $standar6->kategori = $kategori6_4_1_e;
@@ -198,8 +215,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.2.1';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_2_1;
         $standar6->data = $data6_2_1;
         $standar6->skor = $skor6_2_1;
@@ -207,8 +224,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.2.2';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_2_2;
         $standar6->data = $data6_2_2;
         $standar6->skor = $skor6_2_2;
@@ -216,8 +233,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.2.3';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_2_3;
         $standar6->data = $data6_2_3;
         $standar6->skor = $skor6_2_3;
@@ -225,8 +242,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.3.1';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_3_1;
         $standar6->data = $data6_3_1;
         $standar6->skor = $skor6_3_1;
@@ -234,8 +251,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.4.1.a';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_4_1_a;
         $standar6->data = $data6_4_1_a;
         $standar6->skor = $skor6_4_1_a;
@@ -243,8 +260,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.4.1.b';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_4_1_b;
         $standar6->data = $data6_4_1_b;
         $standar6->skor = $skor6_4_1_b;
@@ -252,8 +269,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.4.1.c';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_4_1_c;
         $standar6->data = $data6_4_1_c;
         $standar6->skor = $skor6_4_1_c;
@@ -261,8 +278,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.4.1.d';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_4_1_d;
         $standar6->data = $data6_4_1_d;
         $standar6->skor = $skor6_4_1_d;
@@ -270,8 +287,8 @@ class Standar6AuditorController extends Controller
 
         $standar6 = new Standar6Auditor;
         $standar6->kode = '6.4.1.e';
-        $standar6->id_prodi = '1';
-        $standar5->auditor_id='1';
+        $standar6->id_prodi = $idprodi;
+        $standar6->auditor_id='1';
         $standar6->kategori = $kategori6_4_1_e;
         $standar6->data = $data6_4_1_e;
         $standar6->skor = $skor6_4_1_e;

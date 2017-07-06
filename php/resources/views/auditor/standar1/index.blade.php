@@ -1,4 +1,4 @@
-@extends("layout")
+@extends("layoutauditor")
 @section("content")
 <div class="col-md-12">
     <div class="card">
@@ -7,7 +7,7 @@
             <p class="category">Standar 1</p>
         </div>
         <div class="content">
-            <form @if(0==sizeof($data)) action="/auditor/isi/standar1/save" @else action="auditor/standar1/update" @endif method="post" class="kuesioner">
+            <form @if(0==sizeof($data)) action="/auditor/isi/{{$idprodi}}/standar1/save" @else action="/auditor/isi/{{$idprodi}}/standar1/update" @endif method="post" class="kuesioner">
             {{csrf_field()}}
             <input type="hidden" name="skor1_1_a_old" value="@if(isset($data["1.1.a"])) {{ $data["1.1.a"] }} @endif">
             <input type="hidden" name="skor1_1_b_old" value="@if(isset($data["1.1.b"])) {{ $data["1.1.b"] }} @endif">
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <select name="skor1_1_a" id="" class="form-control border-input">
+                            <select name="skor1_1_a" id="" class="form-control border-input" @if (sizeof($data) > 0) disabled @endif>
                             <option>--Pilih--</option>
                             <option value="4" @if (isset($data["1.1.a"])) @if ($data["1.1.a"] == 4) selected @endif @endif>Memiliki visi, misi, tujuan, dan sasaran yang sangat jelas dan sangat realistik</option>
                             <option value="3" @if (isset($data["1.1.a"])) @if ($data["1.1.a"] == 3) selected @endif @endif>Memiliki visi, misi, tujuan, dan sasaran jelas dan  realistik.</option>
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <select name="skor1_1_b" id="" class="form-control border-input">
+                            <select name="skor1_1_b" id="" class="form-control border-input" @if (sizeof($data) > 0) disabled @endif>
                                 <option>--Pilih--</option>
                               <option value="4" @if (isset($data["1.1.b"])) @if ($data["1.1.b"] == 4) selected @endif @endif>dengan tahapan waktu yang jelas dan sangat realistik | didukung dokumen yg sangat lengkap</option>
                               <option value="3" @if (isset($data["1.1.b"])) @if ($data["1.1.b"] == 3) selected @endif @endif>dengan tahapan waktu yang jelas, dan realistik  | didukung dokumen yang  lengkap.</option>
@@ -58,7 +58,7 @@
 
                         </div>
                         <div class="col-md-12">
-                            <select name="skor1_2" id="" class="form-control border-input">
+                            <select name="skor1_2" id="" class="form-control border-input" @if (sizeof($data) > 0) disabled @endif>
                                 <option>--Pilih--</option>
                                 <option value="4" @if (isset($data["1.2"])) @if ($data["1.2"] == 4) selected @endif @endif>Dipahami dengan baik oleh seluruh sivitas akademika  dan tenaga kependidikan. </option>
                                 <option value="3" @if (isset($data["1.2"])) @if ($data["1.2"] == 3) selected @endif @endif>Dipahami dengan baik oleh sebagian  sivitas akademika dan tenaga kependidikan.</option>
@@ -70,7 +70,7 @@
                 </ul>
 
             <div class="footer text-center">
-                <button type="submit" class="btn btn-info btn-fill btn-wd">Simpan</button>
+                <button type="submit" class="btn btn-info btn-fill btn-wd" @if (sizeof($data) > 0) disabled @endif>Simpan</button>
             <div class="clearfix"></div>
                 <!-- <div class="chart-legend">
                     <i class="fa fa-circle text-info"></i> Open

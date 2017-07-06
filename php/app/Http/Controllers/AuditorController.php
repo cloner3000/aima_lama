@@ -12,10 +12,13 @@ class AuditorController extends Controller
           return view('auditor.index', compact('auditor','standar'));
     }
 
-    public function isi()
+    public function isi(Request $request)
     {
-          $standar="Standar 2";
-          return view('auditor.isi', compact('auditor','standar'));
+      if($request->idprodi == null){
+        return redirect()->back();
+      }else{
+        return redirect('/auditor/isi/'.$request->idprodi.'/standar1/');
+      }
     }
 
     public function lihat(Request $request)

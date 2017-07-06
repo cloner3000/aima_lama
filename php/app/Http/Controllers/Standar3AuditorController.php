@@ -4,21 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Standar3Auditor;
+use App\Standar2Auditor;
 
 class Standar3AuditorController extends Controller
 {
-    public function index()
+    public function index($idprodi)
     {
+      $standar2 = Standar2Auditor::where("id_prodi", $idprodi)->get();
+      if($standar2->count() <= 0){
+        $adadata = false;
+        return redirect("/auditor/isi/$idprodi/standar2");
+      }else{
+        $adadata = true;
+      }
         $standar="Standar 3";
-        $data = Standar3Auditor::select('kode', 'data', 'skor', 'kategori')->where('id_prodi', '=', '1')->orderBy('kode', 'asc')->get();
+        $data = Standar3Auditor::select('kode', 'data', 'skor', 'kategori')->where([['id_prodi', '=', $idprodi],['auditor_id', '=', '1']])->orderBy('kode', 'asc')->get();
         if(!$data->count()){
           $dataCheck = true;
         }else{
           $dataCheck = false;
         }
-        return view('auditor/standar3.index', compact('standar', 'data', 'dataCheck'));
+        return view('auditor/standar3.index', compact('standar', 'data', 'dataCheck', 'idprodi'));
     }
-    public function save(Request $in)
+    public function save(Request $in, $idprodi)
     {
         //PERHITUNGAN 3.1.1.a
         // dd($in->all());
@@ -190,7 +198,8 @@ class Standar3AuditorController extends Controller
           //jika sudah maka ...
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.1.1.a']
           ])->first();
           $standar3->kategori = $kategori3_1_1_a;
@@ -199,7 +208,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.1.1.b']
           ])->first();
           $standar3->kategori = $kategori3_1_1_b;
@@ -208,7 +218,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.1.1.c']
           ])->first();
           $standar3->kategori = $kategori3_1_1_c;
@@ -217,7 +228,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.1.1.d']
           ])->first();
           $standar3->kategori = $kategori3_1_1_d;
@@ -226,7 +238,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.1.2']
           ])->first();
           $standar3->kategori = $kategori3_1_2;
@@ -235,7 +248,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.1.3']
           ])->first();
           $standar3->kategori = $kategori3_1_3;
@@ -244,7 +258,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.1.4.a']
           ])->first();
           $standar3->kategori = $kategori3_1_4_a;
@@ -253,7 +268,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.1.4.b']
           ])->first();
           $standar3->kategori = $kategori3_1_4_b;
@@ -262,7 +278,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.2.1']
           ])->first();
           $standar3->kategori = $kategori3_2_1;
@@ -271,7 +288,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.2.2']
           ])->first();
           $standar3->kategori = $kategori3_2_2;
@@ -280,7 +298,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.3.1.b']
           ])->first();
           $standar3->kategori = $kategori3_3_1_b;
@@ -289,7 +308,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.3.1.c']
           ])->first();
           $standar3->kategori = $kategori3_3_1_c;
@@ -298,7 +318,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.3.2']
           ])->first();
           $standar3->kategori = $kategori3_3_2;
@@ -307,7 +328,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.3.3']
           ])->first();
           $standar3->kategori = $kategori3_3_3;
@@ -316,7 +338,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.4.1']
           ])->first();
           $standar3->kategori = $kategori3_4_1;
@@ -325,7 +348,8 @@ class Standar3AuditorController extends Controller
           $standar3->save();
 
           $standar3 = Standar3Auditor::where([
-            ['id_prodi', '=', '1'],
+            ['id_prodi', '=', $idprodi],
+            ['auditor_id', '=', '1'],
             ['kode', '=', '3.4.2']
           ])->first();
           $standar3->kategori = $kategori3_4_2;
@@ -340,7 +364,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.1.1.a';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_1_1_a;
           $standar3->data = $data3_1_1_a;
           $standar3->skor = $skor3_1_1_a;
@@ -348,7 +373,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.1.1.b';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_1_1_b;
           $standar3->data = $data3_1_1_b;
           $standar3->skor = $skor3_1_1_b;
@@ -356,7 +382,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.1.1.c';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_1_1_c;
           $standar3->data = $data3_1_1_c;
           $standar3->skor = $skor3_1_1_c;
@@ -364,7 +391,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.1.1.d';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_1_1_d;
           $standar3->data = $data3_1_1_d;
           $standar3->skor = $skor3_1_1_d;
@@ -372,7 +400,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.1.2';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_1_2;
           $standar3->data = $data3_1_2;
           $standar3->skor = $skor3_1_2;
@@ -380,7 +409,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.1.3';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_1_3;
           $standar3->data = $data3_1_3;
           $standar3->skor = $skor3_1_3;
@@ -388,7 +418,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.1.4.a';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_1_4_a;
           $standar3->data = $data3_1_4_a;
           $standar3->skor = $skor3_1_4_a;
@@ -396,7 +427,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.1.4.b';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_1_4_b;
           $standar3->data = $data3_1_4_b;
           $standar3->skor = $skor3_1_4_b;
@@ -404,7 +436,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.2.1';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_2_1;
           $standar3->data = $data3_2_1;
           $standar3->skor = $skor3_2_1;
@@ -412,7 +445,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.2.2';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_2_2;
           $standar3->data = $data3_2_2;
           $standar3->skor = $skor3_2_2;
@@ -420,7 +454,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.3.1.b';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_3_1_b;
           $standar3->data = $data3_3_1_b;
           $standar3->skor = $skor3_3_1_b;
@@ -428,7 +463,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.3.1.c';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_3_1_c;
           $standar3->data = $data3_3_1_c;
           $standar3->skor = $skor3_3_1_c;
@@ -436,7 +472,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.3.2';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_3_2;
           $standar3->data = $data3_3_2;
           $standar3->skor = $skor3_3_2;
@@ -444,7 +481,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.3.3';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_3_3;
           $standar3->data = $data3_3_3;
           $standar3->skor = $skor3_3_3;
@@ -452,7 +490,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.4.1';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_4_1;
           $standar3->data = $data3_4_1;
           $standar3->skor = $skor3_4_1;
@@ -460,7 +499,8 @@ class Standar3AuditorController extends Controller
 
           $standar3 = new Standar3Auditor;
           $standar3->kode = '3.4.2';
-          $standar3->id_prodi = '1';
+          $standar3->id_prodi = $idprodi;
+          $standar3->auditor_id = '1';
           $standar3->kategori = $kategori3_4_2;
           $standar3->data = $data3_4_2;
           $standar3->skor = $skor3_4_2;

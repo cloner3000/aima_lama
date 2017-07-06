@@ -2,23 +2,31 @@
 
 namespace App\Http\Controllers;
 use App\Standar5Auditor;
+use App\Standar4Auditor;
 
 use Illuminate\Http\Request;
 
 class Standar5AuditorController extends Controller
 {
-    public function index(){
+    public function index($idprodi){
+      $standar4 = Standar4Auditor::where("id_prodi", $idprodi)->get();
+      if($standar4->count() <= 0){
+        $adadata = false;
+        return redirect("/auditor/isi/$idprodi/standar4");
+      }else{
+        $adadata = true;
+      }
       $standar="Standar 5";
-      $data = Standar5Auditor::select('kode', 'data', 'skor', 'kategori')->where('id_prodi', '=', '1')->orderBy('kode', 'asc')->get();
+      $data = Standar5Auditor::select('kode', 'data', 'skor', 'kategori')->where([['id_prodi', '=', $idprodi], ['auditor_id', '=', '1']])->orderBy('kode', 'asc')->get();
       if(!$data->count()){
         $dataCheck = true;
       }else{
         $dataCheck = false;
       }
-      return view('auditor/standar5.index', compact('standar', 'data', 'dataCheck'));
+      return view('auditor/standar5.index', compact('standar', 'data', 'dataCheck', 'idprodi'));
     }
 
-    public function save(Request $masuk){
+    public function save(Request $masuk, $idprodi){
 
       // $validator = $this->validator($masuk->all());
       // if($alidator->fails()){
@@ -203,20 +211,19 @@ class Standar5AuditorController extends Controller
       $skor5_7_5 = $kategori5_7_5;
 
 
-    $dataStandar5 = Standar5Auditor::where('id_prodi', '=', '1')->first();
+    $dataStandar5 = Standar5Auditor::where('id_prodi', '=', $idprodi)->first();
     if($dataStandar5) {
       // 5.1.1.a
       $standar5=Standar5Auditor::where([
-        ['id_prodi','=','1'],
-        ['kode','=','5.1.1.a']
-      , ['auditor_id','=','1']])->first();
+        ['id_prodi', '=', $idprodi],
+        ['kode','=','5.1.1.a'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_1_1_a;
       $standar5->data=$data5_1_1_a;
       $standar5->skor=$skor5_1_1_a;
       $standar5->save();
 
       // 5.1.2.b
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.1.2.b'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori_5_1_2_b;
       $standar5->data=$data5_1_2_b;
@@ -224,7 +231,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       // 5.1.2.c
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.1.2.c'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_1_2_c;
       $standar5->data=$data5_1_2_c;
@@ -232,7 +239,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       // 5.1.3.a
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.1.3.a'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_1_3_a;
       $standar5->data=$data5_1_3_a;
@@ -240,7 +247,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       // 5.3.2
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.3.2'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori_5_3_2;
       $standar5->data=$data5_3_2;
@@ -248,7 +255,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.4.1.a
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.4.1.a'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_4_1_a;
       $standar5->data=$data5_4_1_a;
@@ -256,7 +263,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.4.1.c
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.4.1.c'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_4_1_c;
       $standar5->data=$data5_4_1_c;
@@ -264,7 +271,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.4.2
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.4.2'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_4_2;
       $standar5->data=$data5_4_2;
@@ -272,7 +279,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.5.1.b
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.5.1.b'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_5_1_b ;
       $standar5->data=$data5_5_1_b;
@@ -280,7 +287,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.5.1.c
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.5.1.c'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_5_1_c;
       $standar5->data=$data5_5_1_c;
@@ -288,7 +295,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.5.2
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.5.2'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori_rpta5_5_2;
       $standar5->data=$data5_5_2;
@@ -296,7 +303,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.7.2
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.7.2'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_7_2;
       $standar5->data=$data5_7_2;
@@ -304,7 +311,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.7.3
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.7.3'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_7_3;
       $standar5->data=$data5_7_3;
@@ -312,7 +319,7 @@ class Standar5AuditorController extends Controller
       $standar5->save();
 
       //5.7.5
-      $standar5=Standar5Auditor::where([['id_prodi','=','1'],
+      $standar5=Standar5Auditor::where([['id_prodi', '=', $idprodi],
       ['kode','=','5.7.5'], ['auditor_id','=','1']])->first();
       $standar5->kategori=$kategori5_7_5;
       $standar5->data=$data5_7_5;
@@ -325,7 +332,7 @@ class Standar5AuditorController extends Controller
       // 5.1.1.a
       $standar5=new Standar5Auditor;
       $standar5->kode ='5.1.1.a';
-      $standar5->id_prodi = '1';
+      $standar5->id_prodi = $idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori = $kategori5_1_1_a;
       $standar5->data=$data5_1_1_a;
@@ -335,7 +342,7 @@ class Standar5AuditorController extends Controller
       // 5.1.2.b
       $standar5= new Standar5Auditor;
       $standar5->kode='5.1.2.b';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori = $kategori_5_1_2_b;
       $standar5->data=$data5_1_2_b;
@@ -345,7 +352,7 @@ class Standar5AuditorController extends Controller
       // 5.1.2.c
       $standar5 = new Standar5Auditor;
       $standar5->kode = '5.1.2.c';
-      $standar5->id_prodi = '1';
+      $standar5->id_prodi = $idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori = $kategori5_1_2_c;
       $standar5->data=$data5_1_2_c;
@@ -355,7 +362,7 @@ class Standar5AuditorController extends Controller
       // 5.1.3.a
       $standar5=new Standar5Auditor;
       $standar5->kode='5.1.3.a';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori = $kategori5_1_3_a;
       $standar5->data=$data5_1_3_a;
@@ -365,7 +372,7 @@ class Standar5AuditorController extends Controller
       // 5.3.2
       $standar5=new Standar5Auditor;
       $standar5->kode='5.3.2';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori_5_3_2;
       $standar5->data=$data5_3_2;
@@ -375,7 +382,7 @@ class Standar5AuditorController extends Controller
       //5.4.1.a
       $standar5=new Standar5Auditor;
       $standar5->kode='5.4.1.a';
-      $standar5->id_prodi="1";
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori5_4_1_a;
       $standar5->data=$data5_4_1_a;
@@ -385,7 +392,7 @@ class Standar5AuditorController extends Controller
       // 5.4.1.c
       $standar5=new Standar5Auditor;
       $standar5->kode="5.4.1.c";
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori5_4_1_c;
       $standar5->data=$data5_4_1_c;
@@ -395,7 +402,7 @@ class Standar5AuditorController extends Controller
       //5.4.2
       $standar5=new Standar5Auditor;
       $standar5->kode='5.4.2';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori5_4_2;
       $standar5->data=$data5_4_2;
@@ -405,7 +412,7 @@ class Standar5AuditorController extends Controller
       //5.5.1.b
       $standar5=new Standar5Auditor;
       $standar5->kode='5.5.1.b';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori5_5_1_b;
       $standar5->data=$data5_5_1_b;
@@ -415,7 +422,7 @@ class Standar5AuditorController extends Controller
       //5.5.1.c
       $standar5=new Standar5Auditor;
       $standar5->kode='5.5.1.c';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori5_5_1_c;
       $standar5->data=$data5_5_1_c;
@@ -425,7 +432,7 @@ class Standar5AuditorController extends Controller
       //5.5.2
       $standar5=new Standar5Auditor;
       $standar5->kode='5.5.2';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori_rpta5_5_2;
       $standar5->data=$data5_5_2;
@@ -435,7 +442,7 @@ class Standar5AuditorController extends Controller
       //5.7.2
       $standar5=new Standar5Auditor;
       $standar5->kode='5.7.2';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori5_7_2;
       $standar5->data=$data5_7_2;
@@ -445,7 +452,7 @@ class Standar5AuditorController extends Controller
       //5.7.3
       $standar5=new Standar5Auditor;
       $standar5->kode='5.7.3';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori5_7_3;
       $standar5->data=$data5_7_3;
@@ -455,7 +462,7 @@ class Standar5AuditorController extends Controller
       //5.7.5
       $standar5=new Standar5Auditor;
       $standar5->kode='5.7.5';
-      $standar5->id_prodi='1';
+      $standar5->id_prodi=$idprodi;
       $standar5->auditor_id='1';
       $standar5->kategori=$kategori5_7_5;
       $standar5->data=$data5_7_5;

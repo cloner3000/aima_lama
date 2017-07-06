@@ -7,7 +7,8 @@
             <p class="category">Standar 7</p>
         </div>
         <div class="content">
-            <form action="/auditor/isi/standar7/save" method="post" class="kuesioner">
+            <form action="/auditor/isi/{{$idprodi}}/standar7/save" method="post" class="kuesioner">
+              <fieldset @if(sizeof($data) > 0) disabled @endif>
                 {{ csrf_field() }}
                 <ul class="list-unstyled">
                     <li class="row">
@@ -157,9 +158,10 @@
                         </div>
                     </li>
                 </ul>
+                </fieldset>
 
             <div class="footer text-center">
-                <button type="submit" class="btn btn-info btn-fill btn-wd">Simpan</button>
+                <button type="submit" class="btn btn-info btn-fill btn-wd" @if (sizeof($data) > 0) disabled @endif>Simpan</button>
             <div class="clearfix"></div>
                 <!-- <div class="chart-legend">
                     <i class="fa fa-circle text-info"></i> Open

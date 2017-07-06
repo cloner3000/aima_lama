@@ -51,72 +51,72 @@
         </div>
 
         <ul class="nav">
-        @if (Request::is('auditor/isi/standar1')||Request::is('auditor/isi/standar1/*'))
+        @if (Request::is('auditor/isi/'.$idprodi.'/standar1')||Request::is('auditor/isi/'.$idprodi.'/standar1/*'))
             <li class="active">
         @else
             <li>
         @endif
-                <a href="{{ url('auditor/isi/standar1') }}">
+                <a href="{{ url('auditor/isi/'.$idprodi.'/standar1') }}">
                     <i class="ti-panel"></i>
                     <p>Standart 1</p>
                 </a>
             </li>
-        @if (Request::is('auditor/isi/standar2')||Request::is('auditor/isi/standar2/*'))
+        @if (Request::is('auditor/isi/'.$idprodi.'/standar2')||Request::is('auditor/isi/'.$idprodi.'/standar2/*'))
             <li class="active">
         @else
             <li>
         @endif
-                <a href="{{ url('auditor/isi/standar2') }}">
+                <a href="{{ url('auditor/isi/'.$idprodi.'/standar2') }}">
                     <i class="ti-user"></i>
                     <p>Standart 2</p>
                 </a>
             </li>
-        @if (Request::is('auditor/isi/standar3')||Request::is('auditor/isi/standar3/*'))
+        @if (Request::is('auditor/isi/'.$idprodi.'/standar3')||Request::is('auditor/isi/'.$idprodi.'/standar3/*'))
             <li class="active">
         @else
             <li>
         @endif
-                <a href="{{ url('auditor/isi/standar3') }}">
+                <a href="{{ url('auditor/isi/'.$idprodi.'/standar3') }}">
                     <i class="ti-view-list-alt"></i>
                     <p>Standart 3</p>
                 </a>
             </li>
-        @if (Request::is('auditor/isi/standar4')||Request::is('auditor/isi/standar4/*'))
+        @if (Request::is('auditor/isi/'.$idprodi.'/standar4')||Request::is('auditor/isi/'.$idprodi.'/standar4/*'))
             <li class="active">
         @else
             <li>
         @endif
-                <a href="{{ url('auditor/isi/standar4') }}">
+                <a href="{{ url('auditor/isi/'.$idprodi.'/standar4') }}">
                     <i class="ti-text"></i>
                     <p>Standart 4</p>
                 </a>
             </li>
-        @if (Request::is('auditor/isi/standar5')||Request::is('auditor/isi/standar5/*'))
+        @if (Request::is('auditor/isi/'.$idprodi.'/standar5')||Request::is('auditor/isi/'.$idprodi.'/standar5/*'))
             <li class="active">
         @else
             <li>
         @endif
-                <a href="{{ url('auditor/isi/standar5') }}">
+                <a href="{{ url('auditor/isi/'.$idprodi.'/standar5') }}">
                     <i class="ti-pencil-alt2"></i>
                     <p>Standart 5</p>
                 </a>
             </li>
-        @if (Request::is('auditor/isi/standar6')||Request::is('auditor/isi/standar6/*'))
+        @if (Request::is('auditor/isi/'.$idprodi.'/standar6')||Request::is('auditor/isi/'.$idprodi.'/standar6/*'))
             <li class="active">
         @else
             <li>
         @endif
-                <a href="{{ url('auditor/isi/standar6') }}">
+                <a href="{{ url('auditor/isi/'.$idprodi.'/standar6') }}">
                     <i class="ti-map"></i>
                     <p>Standart 6</p>
                 </a>
             </li>
-        @if (Request::is('auditor/isi/standar7')||Request::is('auditor/isi/standar7/*'))
+        @if (Request::is('auditor/isi/'.$idprodi.'/standar7')||Request::is('auditor/isi/'.$idprodi.'/standar7/*'))
             <li class="active">
         @else
             <li>
         @endif
-                <a href="{{ url('auditor/isi/standar7') }}">
+                <a href="{{ url('auditor/isi/'.$idprodi.'/standar7') }}">
                     <i class="ti-bell"></i>
                     <p>Standart 7</p>
                 </a>
@@ -141,7 +141,7 @@
                         <span class="icon-bar bar2"></span>
                         <span class="icon-bar bar3"></span>
                     </button>
-                    <a class="navbar-brand" href="#">AIMA / {{$standar}} </a>
+                    <a class="navbar-brand" href="#">AIMA / {{$standar}} / Prodi {{$idprodi}}</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
