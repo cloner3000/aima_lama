@@ -16,7 +16,7 @@ class Standar3AuditorController extends Controller
         }else{
           $dataCheck = false;
         }
-        return view('standar3.index', compact('standar', 'data', 'dataCheck'));
+        return view('auditor/standar3.index', compact('standar', 'data', 'dataCheck'));
     }
     public function save(Request $in)
     {

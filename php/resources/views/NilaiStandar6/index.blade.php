@@ -17,9 +17,9 @@
               <a href="/rekap/nilaistandar2" class="btn btn-primary">Standar 2</a>
               <a href="/rekap/nilaistandar3" class="btn btn-primary">Standar 3</a>
               <a href="/rekap/nilaistandar4" class="btn btn-primary">Standar 4</a>
-              <a href="#" class="btn btn-primary">Standar 5</a>
-              <a href="#" class="btn btn-primary">Standar 6</a>
-              <a href="#" class="btn btn-primary">Standar 7</a>
+              <a href="/rekap/nilaistandar5" class="btn btn-primary">Standar 5</a>
+              <a href="/rekap/nilaistandar6" class="btn btn-primary active">Standar 6</a>
+              <a href="/rekap/nilaistandar7" class="btn btn-primary">Standar 7</a>
               </div>
 
 
@@ -28,8 +28,8 @@
                       <div class="main-panel" style="width:100%">
                         <div class="card-content table-responsive">
                                     <table border="1"  class="table">
-                                      <thead >
-                                    <tr class="warning">
+                                      <thead class="text-primary">
+                                    <tr>
                                       <td width="100px"> 4.3.1.a </td>
       																<td width="100px"> 4.3.1.b </td>
       																<td width="100px"> 4.3.1.c </td>

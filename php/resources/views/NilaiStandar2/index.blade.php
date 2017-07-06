@@ -25,14 +25,13 @@
                     <div class="col-md-12">
                         <div class="main-panel" style="width:100%">
 
-                          <table border="1" width="600px" class="table">
-                            <thead class="text-primary">
-
-                          <tr>
-                            <td width="100px"> 2.1 </td>
-                            <td width="100px"> 2.2 </td>
-                            <td width="100px"> 2.6 </td>
-                            <td width="100px"> Total Nilai</td>
+                          <table border="1" class="table">
+                          <thead>
+                          <tr class="warning">
+                            <td width="50px"> 2.1 </td>
+                            <td width="50px"> 2.2 </td>
+                            <td width="50px"> 2.6 </td>
+                            <td width="50px"> Total Nilai</td>
                           </tr>
 
                           <!-- tampilkan nilai -->

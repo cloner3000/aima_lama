@@ -51,72 +51,72 @@
                     </div>
 
                     <ul class="nav">
-                    @if (Request::is('standar1')||Request::is('standar1/*'))
+                    @if (Request::is('auditor/isi/standar1')||Request::is('auditor/isi/standar1/*'))
                         <li class="active">
                     @else
                         <li>
                     @endif
-                            <a href="{{ url('/standar1') }}">
+                            <a href="{{ url('auditor/isi/standar1') }}">
                                 <i class="ti-panel"></i>
                                 <p>Standart 1</p>
                             </a>
                         </li>
-                    @if (Request::is('standar2')||Request::is('standar2/*'))
+                    @if (Request::is('auditor/isi/standar2')||Request::is('auditor/isi/standar2/*'))
                         <li class="active">
                     @else
                         <li>
                     @endif
-                            <a href="{{ url('/standar2') }}">
+                            <a href="{{ url('auditor/isi/standar2') }}">
                                 <i class="ti-user"></i>
                                 <p>Standart 2</p>
                             </a>
                         </li>
-                    @if (Request::is('standar3')||Request::is('standar3/*'))
+                    @if (Request::is('auditor/isi/standar3')||Request::is('auditor/isi/standar3/*'))
                         <li class="active">
                     @else
                         <li>
                     @endif
-                            <a href="{{ url('/standar3') }}">
+                            <a href="{{ url('auditor/isi/standar3') }}">
                                 <i class="ti-view-list-alt"></i>
                                 <p>Standart 3</p>
                             </a>
                         </li>
-                    @if (Request::is('standar4')||Request::is('standar4/*'))
+                    @if (Request::is('auditor/isi/standar4')||Request::is('auditor/isi/standar4/*'))
                         <li class="active">
                     @else
                         <li>
                     @endif
-                            <a href="{{ url('/standar4') }}">
+                            <a href="{{ url('auditor/isi/standar4') }}">
                                 <i class="ti-text"></i>
                                 <p>Standart 4</p>
                             </a>
                         </li>
-                    @if (Request::is('standar5')||Request::is('standar5/*'))
+                    @if (Request::is('auditor/isi/standar5')||Request::is('auditor/isi/standar5/*'))
                         <li class="active">
                     @else
                         <li>
                     @endif
-                            <a href="{{ url('/standar5') }}">
+                            <a href="{{ url('auditor/isi/standar5') }}">
                                 <i class="ti-pencil-alt2"></i>
                                 <p>Standart 5</p>
                             </a>
                         </li>
-                    @if (Request::is('standar6')||Request::is('standar6/*'))
+                    @if (Request::is('auditor/isi/standar6')||Request::is('auditor/isi/standar6/*'))
                         <li class="active">
                     @else
                         <li>
                     @endif
-                            <a href="{{ url('/standar6') }}">
+                            <a href="{{ url('auditor/isi/standar6') }}">
                                 <i class="ti-map"></i>
                                 <p>Standart 6</p>
                             </a>
                         </li>
-                    @if (Request::is('standar7')||Request::is('standar7/*'))
+                    @if (Request::is('auditor/isi/standar7')||Request::is('auditor/isi/standar7/*'))
                         <li class="active">
                     @else
                         <li>
                     @endif
-                            <a href="{{ url('/standar7') }}">
+                            <a href="{{ url('auditor/isi/standar7') }}">
                                 <i class="ti-bell"></i>
                                 <p>Standart 7</p>
                             </a>
