@@ -237,7 +237,7 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat</button>
                               </td>
                               <td>
-                                <a href="auditor/isi" button type="button" class="btn btn-primary btn-md">Isi</button>
+                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
                               </td>
                             </tr>
 
@@ -274,7 +274,7 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat</button>
                               </td>
                               <td>
-                                <a href="auditor/isi" button type="button" class="btn btn-primary btn-md">Isi</button>
+                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
                               </td>
                             </tr>
 
@@ -304,7 +304,7 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat</button>
                               </td>
                               <td>
-                                <a href="auditor/isi" button type="button" class="btn btn-primary btn-md">Isi</button>
+                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
                               </td>
                             </tr>
 
@@ -335,7 +335,7 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat</button>
                               </td>
                               <td>
-                                <a href="auditor/isi" button type="button" class="btn btn-primary btn-md">Isi</button>
+                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
                               </td>
                             </tr>
 
@@ -361,7 +361,7 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat</button>
                               </td>
                               <td>
-                                <a href="auditor/isi" button type="button" class="btn btn-primary btn-md">Isi</button>
+                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
                               </td>
                             </tr>
 
@@ -389,7 +389,7 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat</button>
                               </td>
                               <td>
-                                <a href="auditor/isi" button type="button" class="btn btn-primary btn-md">Isi</button>
+                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
                               </td>
                             </tr>
 
@@ -409,7 +409,7 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat</button>
                               </td>
                               <td>
-                                <a href="auditor/isi" button type="button" class="btn btn-primary btn-md">Isi</button>
+                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
                               </td>
                             </tr>
 

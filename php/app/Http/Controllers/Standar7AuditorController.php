@@ -15,7 +15,7 @@ class Standar7AuditorController extends Controller
       }else{
         $dataCheck = false;
       }
-      return view('standar7.index', compact('standar', 'data', 'dataCheck'));
+      return view('auditor/standar7.index', compact('standar', 'data', 'dataCheck'));
     }
 
     public function save(Request $request){

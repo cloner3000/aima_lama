@@ -15,7 +15,7 @@ class Standar5AuditorController extends Controller
       }else{
         $dataCheck = false;
       }
-      return view('standar5.index', compact('standar', 'data', 'dataCheck'));
+      return view('auditor/standar5.index', compact('standar', 'data', 'dataCheck'));
     }
 
     public function save(Request $masuk){

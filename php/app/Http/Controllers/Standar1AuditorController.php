@@ -14,7 +14,7 @@ class Standar1AuditorController extends Controller
         $data[$data_standar1->kode] = $data_standar1->kategori;
       }
     	$standar="Standar 1";
-    	return view("standar1.index", compact('data', 'standar'));
+    	return view("auditor/standar1.index", compact('data', 'standar'));
     }
 
     public function save(Request $request){
