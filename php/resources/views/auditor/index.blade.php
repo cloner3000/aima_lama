@@ -196,7 +196,7 @@
                         <tr>
                           <th>Fakultas</th>
                             <th><div class="col-xs-4">Nama Prodi</div></th>
-                            <th colspan=2 style="text-align:center">Aksi</th>
+                            <th colspan=3 style="text-align:center">Aksi</th>
 
                           </tr>
                         </thead>
@@ -234,7 +234,11 @@
                               </td>
                               <td>
                                 <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat</button>
+                                <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
+                              </td>
+                              <td>
+                                <div class="col-xs-3">
+                                <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
@@ -271,7 +275,11 @@
                               </td>
                               <td>
                                 <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat</button>
+                                <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
+                              </td>
+                              <td>
+                                <div class="col-xs-3">
+                                <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
@@ -301,7 +309,11 @@
                               </td>
                               <td>
                                 <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat</button>
+                                <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
+                              </td>
+                              <td>
+                                <div class="col-xs-3">
+                                <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
@@ -332,7 +344,11 @@
                               </td>
                               <td>
                                 <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat</button>
+                                <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
+                              </td>
+                              <td>
+                                <div class="col-xs-3">
+                                <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
@@ -358,7 +374,11 @@
                               </td>
                               <td>
                                 <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat</button>
+                                <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
+                              </td>
+                              <td>
+                                <div class="col-xs-3">
+                                <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
@@ -386,7 +406,11 @@
                               </td>
                               <td>
                                 <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat</button>
+                                <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
+                              </td>
+                              <td>
+                                <div class="col-xs-3">
+                                <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
@@ -406,7 +430,11 @@
                               </td>
                               <td>
                                 <div class="col-xs-3">
-                                <button type="button" class="btn btn-primary btn-md">Lihat</button>
+                                <button type="button" class="btn btn-primary btn-md">Lihat Rekapitulasi</button>
+                              </td>
+                              <td>
+                                <div class="col-xs-3">
+                                <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
                                 <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</button>
