@@ -109,7 +109,7 @@
                         </thead>
                           <tbody>
                             <tr>
-                              <form action="" method="post">
+                              <form id="formft" action="" method="post">
                                 {{ csrf_field() }}
                                 <td>Fakultas Teknik</td>
                                 <td>
@@ -150,16 +150,18 @@
                                   <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                                 </td>
                                 <td>
-                                  <button type="submit" class="btn btn-primary btn-md">Isi</button>
+                                  <button type="button" onclick="document.getElementById('formft').submit();" class="btn btn-primary btn-md">Isi</button>
                                 </td>
                               </form>
                             </tr>
 
                             <tr>
+                              <form id="formfs" action="" method="post">
+                                {{ csrf_field() }}
                               <td>Fakultas Sastra</td>
                               <td>
                                 <div class="col-xs-5">
-                                  <select class="form-control border-input" name="">
+                                  <select class="form-control border-input" name="idprodi">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Sastra Indonesia--</option>
                                     <option value="19">Prodi S1 Pendidikan Bahasa Sastra Indonesia dan Daerah</option>
@@ -192,15 +194,18 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
-                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
+                                <button type="button" onclick="document.getElementById('formfs').submit();" class="btn btn-primary btn-md">Isi</button>
                               </td>
+                            </form>
                             </tr>
 
                             <tr>
+                              <form id="formfip" action="" method="post">
+                                {{ csrf_field() }}
                               <td>Fakultas Ilmu Pendidikan</td>
                               <td>
                                 <div class="col-xs-5">
-                                  <select class="form-control border-input" name="">
+                                  <select class="form-control border-input" name="idprodi">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Bimbingan dan Konseling--</option>
                                     <option value="32">Prodi S1 Bimbingan dan Konseling</option>
@@ -227,15 +232,18 @@
                               </td>
 
                               <td>
-                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
+                                <button type="button" onclick="document.getElementById('formfip').submit();" class="btn btn-primary btn-md">Isi</button>
                               </td>
+                            </form>
                             </tr>
 
                             <tr>
+                              <form id="formmipa" action="" method="post">
+                                {{ csrf_field() }}
                               <td>Fakultas Matematika dan IPA</td>
                               <td>
                                 <div class="col-xs-5">
-                                  <select class="form-control border-input" name="">
+                                  <select class="form-control border-input" name="idprodi">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Matematika--</option>
                                     <option value="39">Prodi S1 Pendidikan Matematika</option>
@@ -263,24 +271,27 @@
                               </td>
 
                               <td>
-                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
+                                <button type="button" onclick="document.getElementById('formmipa').submit();" class="btn btn-primary btn-md">Isi</button>
                               </td>
+                            </form>
                             </tr>
 
                             <tr>
+                              <form id="formfik" action="" method="post">
+                                {{ csrf_field() }}
                               <td>Fakultas Ilmu Keolahragaan</td>
                               <td>
                                 <div class="col-xs-5">
-                                  <select class="form-control border-input" name="">
+                                  <select class="form-control border-input" name="idprodi">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Pendidikan Jasmani dan Kesehatan--</option>
-                                    <option value="">Prodi S1 Pendidikan Jasmani dan Kesehatan</option>
+                                    <option value="48">Prodi S1 Pendidikan Jasmani dan Kesehatan</option>
                                     <option value="">--Jurusan Pendidikan Kepelatihan Olahraga--</option>
-                                    <option value="">Prodi S1 Pendidikan Kepelatihan Olahraga</option>
+                                    <option value="49">Prodi S1 Pendidikan Kepelatihan Olahraga</option>
                                     <option value="">--Jurusan Ilmu Keolahragaan--</option>
-                                    <option value="">Prodi S1 Ilmu Keolahragaan</option>
+                                    <option value="50">Prodi S1 Ilmu Keolahragaan</option>
                                     <option value="">--Jurusan Ilmu Kesehatan Masyarakat--</option>
-                                    <option value="">Prodi S1 Ilmu Kesehatan Masyarakat</option>
+                                    <option value="51">Prodi S1 Ilmu Kesehatan Masyarakat</option>
                                   </select>
                                 </div>
                               </td>
@@ -294,26 +305,29 @@
                               </td>
 
                               <td>
-                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
+                                <button type="button" onclick="document.getElementById('formfik').submit();" class="btn btn-primary btn-md">Isi</button>
                               </td>
+                            </form>
                             </tr>
 
                             <tr>
+                              <form id="formfis" action="" method="post">
+                                {{ csrf_field() }}
                               <td>Fakultas Ilmu Sosial</td>
                               <td>
                                 <div class="col-xs-5">
-                                  <select class="form-control border-input" name="">
+                                  <select class="form-control border-input" name="idprodi">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Hukum dan Kewarganegaraan--</option>
-                                    <option value="">Prodi S1 Pendidikan Pancasila dan Kewarganegaraan</option>
+                                    <option value="52">Prodi S1 Pendidikan Pancasila dan Kewarganegaraan</option>
                                     <option value="">--Jurusan Geografi--</option>
-                                    <option value="">Prodi S1 Pendidikan Geografi</option>
-                                    <option value="">Prodi S1 Geografi</option>
+                                    <option value="53">Prodi S1 Pendidikan Geografi</option>
+                                    <option value="54">Prodi S1 Geografi</option>
                                     <option value="">--Jurusan Sejarah--</option>
-                                    <option value="">Prodi S1 Pendidikan Sejarah</option>
-                                    <option value="">Prodi S1 Ilmu Sejarah</option>
-                                    <option value="">Prodi S1 Pendidikan Ilmu Pengetahuan Sosial</option>
-                                    <option value="">Prodi S1 Pendidikan Sosiologi</option>
+                                    <option value="55">Prodi S1 Pendidikan Sejarah</option>
+                                    <option value="56">Prodi S1 Ilmu Sejarah</option>
+                                    <option value="57">Prodi S1 Pendidikan Ilmu Pengetahuan Sosial</option>
+                                    <option value="58">Prodi S1 Pendidikan Sosiologi</option>
                                   </select>
                                 </div>
                               </td>
@@ -326,18 +340,21 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
-                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
+                                <button type="button" onclick="document.getElementById('formfis').submit();" class="btn btn-primary btn-md">Isi</button>
                               </td>
+                            </form>
                             </tr>
 
                             <tr>
+                              <form id="formfppsi" action="" method="post">
+                                {{ csrf_field() }}
                               <td>Fakultas Pendidikan Psikologi</td>
                               <td>
                                 <div class="col-xs-5">
                                   <select class="form-control border-input" name="">
                                   <option>--Pilih Prodi--</option>
                                     <option value="">--Jurusan Psikologi--</option>
-                                    <option value="">Prodi S1 Psikologi</option>
+                                    <option value="59">Prodi S1 Psikologi</option>
                                   </select>
                                 </div>
                               </td>
@@ -350,8 +367,9 @@
                                 <button type="button" class="btn btn-primary btn-md">Lihat Isian</button>
                               </td>
                               <td>
-                                <a href="auditor/isi/standar1" button type="button" class="btn btn-primary btn-md">Isi</a>
+                                <button type="button" onclick="document.getElementById('formfppsi').submit();" class="btn btn-primary btn-md">Isi</button>
                               </td>
+                            </form>
                             </tr>
 
 
