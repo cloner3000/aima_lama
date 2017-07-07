@@ -27,7 +27,28 @@
                   <div class="col-md-12">
                       <div class="main-panel" style="width:100%">
                         <div class="card-content table-responsive">
-                                    <h3 class="text-muted text-center">Belum mengisi data</h3>
+                          <table border="1"  class="table">
+                            <thead>
+                              <tr class="warning">
+                                <!-- tampilkan kode -->
+                                @foreach ($nilaistandar7 as $tampilkan)
+                                <td>{{$tampilkan->kode}} </td>
+                                 @endforeach
+                                @if($total)<td> Total Nilai</td>@endif
+                              </tr>
+
+                              <!-- tampilkan nilai -->
+                              @foreach ($nilaistandar7 as $tampilkan)
+                              <td>{{$tampilkan->kategori}} </td>
+                               @endforeach
+
+                              @if($total)<td>{{$total}}</td>
+                               @else<h3 class="text-muted text-center">Data Kosong</h3>
+                               @endif
+                            </thead>
+                          </table>
+
+                                    <!-- <h3 class="text-muted text-center">Belum mengisi data</h3> -->
                           </div>
                         </div>
                   </div>

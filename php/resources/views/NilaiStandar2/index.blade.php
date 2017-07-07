@@ -28,17 +28,23 @@
                           <table border="1" class="table">
                           <thead>
                           <tr class="warning">
-                            <td width="50px"> 2.1 </td>
-                            <td width="50px"> 2.2 </td>
-                            <td width="50px"> 2.6 </td>
-                            <td width="50px"> Total Nilai</td>
+
+
+                            @foreach($nilaistandar2 as $tampilkan)
+                            <td> {{$tampilkan->kode}}</td>
+                            @endforeach
+                              @if($total>0)<td>Total</td>@endif
                           </tr>
 
                           <!-- tampilkan nilai -->
-                          <td> 0 </td>
-                          <td> 0 </td>
-                          <td> 0 </td>
-                          <td> 0 </td>
+                          @foreach ($nilaistandar2 as $tampilkan)
+                          <td>{{$tampilkan->kategori}} </td>
+                           @endforeach
+
+                           <!-- menampilkan jumlah total nilai -->
+                           @if($total>0)<td>  {{$total}}</td>
+                           @else<h3 class="text-muted text-center">Data Kosong</h3>
+                           @endif
 
                         </thead>
                         </table>

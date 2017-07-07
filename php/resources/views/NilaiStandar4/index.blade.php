@@ -30,45 +30,21 @@
                                     <table border="1"  class="table">
                                       <thead >
                                     <tr class="warning">
-                                      <td width="100px"> 4.3.1.a </td>
-      																<td width="100px"> 4.3.1.b </td>
-      																<td width="100px"> 4.3.1.c </td>
-      																<td width="100px"> 4.3.1.d </td>
-      																<td width="100px"> 4.3.2 </td>
-      																<td width="100px"> 4.3.3 </td>
-      																<td width="100px"> 4.3.4 </td>
-      																<td width="100px"> 4.3.6 </td>
-      																<td width="100px"> 4.4.1 </td>
-      																<td width="100px"> 4.4.2.a </td>
-      																<td width="100px"> 4.4.2.b </td>
-      																<td width="100px"> 4.5.1 </td>
-      																<td width="100px"> 4.5.2 </td>
-      																<td width="100px"> 4.5.3 </td>
-      																<td width="100px"> 4.5.4 </td>
-      																<td width="100px"> 4.6.1.a </td>
-      																<td width="100px"> 4.6.1.c </td>
-                                      <td width="100px"> Total Nilai</td>
-                                    </tr>
+                                        <!-- tampilkan kode -->
+                                        @foreach ($nilaistandar4 as $tampilkan)
+                                        <td>{{$tampilkan->kode}} </td>
+                                         @endforeach
+                                         @if($total>0)<td> Total</td>@endif
+                                      </tr>
 
-                                    <td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-      															<td>0</td>
-                                    <td>0</td>
+                                      <!-- tampilkan nilai -->
+                                      @foreach ($nilaistandar4 as $tampilkan)
+                                      <td>{{$tampilkan->kategori}} </td>
+                                       @endforeach
 
+                                      @if($total>0)<td>{{$total}}</td>
+                                      @else<h3 class="text-muted text-center">Data Kosong</h3>
+                                      @endif
                                   </thead>
                                   </table>
                           </div>

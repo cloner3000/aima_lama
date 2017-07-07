@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\NilaiStandar4 ;
+use App\NilaiStandar7 ;
 
 class NilaiStandar7Controller extends Controller
 {
   public function index()
   {
     $standar="Rekap Nilai Standar 7";
-    return view("NilaiStandar7.index", compact('data', 'standar'));
+      $nilaistandar7=NilaiStandar7::select('kode','kategori')->get();
+      $total=0;
+      foreach ($nilaistandar7 as  $value) {
+        $total+=$value->kategori;
+      }
+    return view("NilaiStandar7.index", compact('nilaistandar7', 'standar','total'));
   }
 }

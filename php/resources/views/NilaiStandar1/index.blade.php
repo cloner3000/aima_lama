@@ -1,6 +1,6 @@
-
 @extends("layout")
 @section("content")
+
 <div class="col-md-12">
     <div class="card">
         <div class="header">
@@ -28,17 +28,31 @@
                           <table border="1" class="table">
                           <thead>
                           <tr class="warning">
-                            <td width="50px"> 1.1.a </td>
-                            <td width="50px"> 1.1.b </td>
-                            <td width="50px"> 1.2 </td>
-                            <td width="50px"> Total Nilai</td>
+                            <!-- tampilkan kode  -->
+                            @foreach ($nilaistandar1 as $tampilkan)
+                            <td>{{$tampilkan->kode}} </td>
+                             @endforeach
+
+                             @if($total>0)<td> Total </td>
+                             @endif
+
                           </tr>
 
-                          <td> 0 </td>
-                          <td> 0 </td>
-                          <td> 0 </td>
-                          <td> 0 </td>
+                          <!-- menampilkan data nilai -->
+                          <tr>
+                          @foreach ($nilaistandar1 as $tampilkan)
+                          <td>{{$tampilkan->kategori}} </td>
+                           @endforeach
+                           <!-- menampilkan nilai total -->
 
+                             @if($total>0)<td>{{$total}}</td>
+                             @else<h3 class="text-muted text-center">Data Kosong</h3>
+                             @endif
+
+
+                            </tr>
+
+                        </tr>
                         </thead>
                         </table>
                         </div>
@@ -49,4 +63,5 @@
         </div>
     </div>
 </div>
+
 @endsection

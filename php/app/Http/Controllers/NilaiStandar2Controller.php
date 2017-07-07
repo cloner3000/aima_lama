@@ -10,6 +10,12 @@ class NilaiStandar2Controller extends Controller
   public function index()
   {
     $standar="Rekap Nilai Standar 2";
-    return view("NilaiStandar2.index", compact('data', 'standar'));
+
+    $nilaistandar2=NilaiStandar2::select('kode','kategori')->get();
+    $total = 0;
+    foreach ($nilaistandar2 as $value) {
+      $total += $value->kategori;
+    }
+    return view("NilaiStandar2.index",compact('nilaistandar2','standar','total'));
   }
 }

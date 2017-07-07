@@ -10,6 +10,11 @@ class NilaiStandar4Controller extends Controller
   public function index()
   {
     $standar="Rekap Nilai Standar 4";
-    return view("NilaiStandar4.index", compact('data', 'standar'));
+      $nilaistandar4=NilaiStandar4::select('kode','kategori')->get();
+      $total=0;
+      foreach ($nilaistandar4 as $value) {
+        $total +=$value->kategori;
+      }
+    return view("NilaiStandar4.index", compact('nilaistandar4', 'standar','total'));
   }
 }
