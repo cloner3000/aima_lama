@@ -13,7 +13,7 @@
 Route::get('/servicecheck','SecurityController@check');
 Route::get('/servicelogout','SecurityController@logout');
 
- // Route::group(['middleware' => 'auth_josso'], function() {
+ Route::group(['middleware' => 'auth_josso'], function() {
   Route::get('/', "Standar1Controller@index");
 	Route::get("/standar1", "Standar1Controller@index");
 	Route::post("/standar1/save", "Standar1Controller@save");
@@ -61,7 +61,7 @@ Route::get('/servicelogout','SecurityController@logout');
   Route::post('/auditor/isi/{idprodi}/standar7/save', 'Standar7AuditorController@save');
   Route::get('/auditor/isi/{idprodi}/standar6', "Standar6AuditorController@index");
   Route::post('/auditor/isi/{idprodi}/standar6/save', "Standar6AuditorController@save");
-// });
+});
 
   Route::get("/auditor/isi/standar1", "Standar1AuditorController@index");
   Route::post("/auditor/isi/standar1/save", "Standar1AuditorController@save");
